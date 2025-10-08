@@ -1,0 +1,1854 @@
+Your Account Is Not Active !
+Saved Sucessfully
+Updated Sucessfully
+Removed Sucessfully
+Language Already Exists !
+Language Created Sucessfully
+Update Failed !
+Directory
+Action
+Update File
+Edit
+View
+Delete
+Folder Name Already Exists !
+File Name Already Exists !
+Uploaded Sucessfully
+Deleted Sucessfully
+Information Has Been Updated
+Old Password Did Not Match !
+Password Has Been Changed *
+Password has been changed
+Logo Upload Successfully *
+Logo Upload successfully
+Saved Sucessfully *
+Saved sucessfully
+Backup Created Sucessfully *
+Backup Created Sucessfully
+Cache Removed Sucessfully *
+Cache Removed Sucessfully
+Permission Denied ! *
+Permission denied !
+Login To Your Account *
+Login To Your Account
+Email *
+Email
+Password *
+Password
+Remember Me *
+Remember Me
+Login *
+Login
+Continue With Google *
+Continue With Google
+Continue With Facebook *
+Continue With Facebook
+Create Account *
+Create Account
+Forgot Password? *
+Forgot Password?
+Confirm Password *
+Confirm Password
+Please Confirm Your Password Before Continuing. *
+Please confirm your password before continuing.
+Forgot Your Password? *
+Forgot Your Password?
+Reset Password *
+Reset Password
+Enter Your Email *
+Enter your Email
+Send Password Reset Link *
+Send Password Reset Link
+E-Mail Address *
+E-Mail Address
+Create Your Account Now *
+Create Your Account Now
+Name *
+Name
+Create My Account *
+Create My Account
+Already Have An Account? *
+Already Have An Account?
+Log In Here *
+Log In Here
+Verify Your Email Address *
+Verify Your Email Address
+A Fresh Verification Link Has Been Sent To Your Email Address. *
+A fresh verification link has been sent to your email address.
+Before Proceeding, Please Check Your Email For A Verification Link. *
+Before proceeding, please check your email for a verification link.
+If You Did Not Receive The Email *
+If you did not receive the email
+Click Here To Request Another *
+click here to request another
+Database Backups *
+Database Backups
+Create New Backup *
+Create New Backup
+Created At *
+Created At
+File *
+File
+Created By *
+Created By
+Download *
+Download
+Add Email Template *
+Add Email Template
+Subject *
+Subject
+Body *
+Body
+Reset *
+Reset
+Save *
+Save
+Update Email Template *
+Update Email Template
+Update *
+Update
+Email Templates *
+Email Templates
+View Email Template *
+View Email Template
+General Settings *
+General Settings
+System Settings *
+System Settings
+Email Settings *
+Email Settings
+Payment Gateway *
+Payment Gateway
+Social Login *
+Social Login
+Media Settings *
+Media Settings
+Cron Jobs *
+Cron Jobs
+Logo And Favicon *
+Logo and Favicon
+Cache Control *
+Cache Control
+Company Name *
+Company Name
+Site Title *
+Site Title
+Phone *
+Phone
+Timezone *
+Timezone
+-- Select One -- *
+-- Select One --
+Language *
+Language
+Address *
+Address
+Save Settings *
+Save Settings
+Landing Page *
+Landing Page
+Enable *
+Enable
+Disable *
+Disable
+Backend Direction *
+Backend Direction
+LTR *
+LTR
+RTL *
+RTL
+Currency Converter *
+Currency Converter
+Manual *
+Manual
+Fixer API *
+Fixer API
+Fixer API Key *
+Fixer API Key
+GET API KEY *
+GET API KEY
+Currency *
+Currency
+Select One *
+Select One
+Currency Position *
+Currency Position
+Left *
+Left
+Right *
+Right
+Date Format *
+Date Format
+Time Format *
+Time Format
+24 Hours *
+24 Hours
+12 Hours *
+12 Hours
+Allow Sign Up *
+Allow Sign Up
+Email Verification *
+Email Verification
+Mail Type *
+Mail Type
+SMTP *
+SMTP
+Sendmail *
+Sendmail
+From Email *
+From Email
+From Name *
+From Name
+SMTP Host *
+SMTP Host
+SMTP Port *
+SMTP Port
+SMTP Username *
+SMTP Username
+SMTP Password *
+SMTP Password
+SMTP Encryption *
+SMTP Encryption
+None *
+None
+SSL *
+SSL
+TLS *
+TLS
+PayPal *
+PayPal
+Enable PayPal *
+Enable PayPal
+No *
+No
+Yes *
+Yes
+Label *
+Label
+PayPal Mode *
+PayPal Mode
+Sandbox *
+Sandbox
+Client ID *
+Client ID
+Secret *
+Secret
+Stripe *
+Stripe
+Enable Stripe *
+Enable Stripe
+Secret Key *
+Secret Key
+Publishable Key *
+Publishable Key
+Google Login *
+Google Login
+GOOGLE CLIENT ID *
+GOOGLE CLIENT ID
+GOOGLE CLIENT SECRET *
+GOOGLE CLIENT SECRET
+GOOGLE REDIRECT URL *
+GOOGLE REDIRECT URL
+Facebook Login *
+Facebook Login
+FACEBOOK APP ID *
+FACEBOOK APP ID
+FACEBOOK APP SECRET *
+FACEBOOK APP SECRET
+FACEBOOK REDIRECT URL *
+FACEBOOK REDIRECT URL
+Max Upload Size MB *
+Max upload size MB
+File Type Supported *
+File Type Supported
+Small Image Width *
+Small Image Width
+Small Image Height *
+Small Image Height
+Blank For Auto Height *
+Blank for Auto height
+Medium Image Width *
+Medium Image Width
+Medium Image Height *
+Medium Image Height
+Large Image Width *
+Large Image Width
+Large Image Height *
+Large Image Height
+Cron Jobs URL *
+Cron Jobs URL
+Run Every 12 Hours *
+Run every 12 hours
+Upload Logo *
+Upload Logo
+Upload *
+Upload
+Upload Favicon *
+Upload Favicon
+View Cache *
+View Cache
+Application Cache *
+Application Cache
+Remove Cache *
+Remove Cache
+Add New Language *
+Add New Language
+Language Name *
+Language Name
+Create Language *
+Create Language
+Edit Translation *
+Edit Translation
+Save Translation *
+Save Translation
+Languages *
+Languages
+Add New *
+Add New
+Remove *
+Remove
+Media *
+Media
+Upload File *
+Upload File
+New File *
+New File
+New Folder *
+New Folder
+Back *
+Back
+Root *
+Root
+File Type *
+File Type
+Created *
+Created
+Modified *
+Modified
+Folder *
+Folder
+Root Directory *
+Root Directory
+Folder Name *
+Folder Name
+Parent Folder *
+Parent Folder
+Mime Type *
+Mime Type
+View File *
+View File
+Access Control *
+Access Control
+Select Role *
+Select Role
+Permission Control *
+Permission Control
+Save Permission *
+Save Permission
+Change Password *
+Change Password
+Old Password *
+Old Password
+New Password *
+New Password
+Update Password *
+Update Password
+Profile Settings *
+Profile Settings
+Image *
+Image
+Update Profile *
+Update Profile
+Package Details *
+Package Details
+Feature *
+Feature
+Avaialble Limit *
+Avaialble Limit
+Staff Limit *
+Staff Limit
+Contacts Limit *
+Contacts Limit
+Invoice Limit *
+Invoice Limit
+Quotation Limit *
+Quotation Limit
+Recurring Transaction *
+Recurring Transaction
+Inventory Module *
+Inventory Module
+Live Chat *
+Live Chat
+File Manager *
+File Manager
+Online Payment *
+Online Payment
+My Profile *
+My Profile
+User Type *
+User Type
+Create User *
+Create User
+Admin *
+Admin
+User *
+User
+User Role *
+User Role
+Status *
+Status
+Active *
+Active
+In Active *
+In Active
+Profile Picture *
+Profile Picture
+Update User *
+Update User
+User Management *
+User Management
+User List *
+User List
+View User *
+View User
+Role Management *
+Role Management
+Create Role *
+Create Role
+Description *
+Description
+Update Role *
+Update Role
+User Roles *
+User Roles
+View Role *
+View Role
+Logout *
+Logout
+NAVIGATIONS *
+NAVIGATIONS
+Dashboard *
+Dashboard
+All Users *
+All Users
+All Language *
+All Language
+Administration *
+Administration
+Email Template *
+Email Template
+Database Backup *
+Database Backup
+Are You Sure? *
+Are you sure?
+Once Deleted, You Will Not Be Able To Recover This Information ! *
+Once deleted, you will not be able to recover this information !
+Yes, Delete It! *
+Yes, delete it!
+Cancel *
+Cancel
+No Data Found *
+No Data Found
+Showing *
+Showing
+To *
+to
+Of *
+of
+Entries *
+Entries
+Showing 0 To 0 Of 0 Entries *
+Showing 0 To 0 Of 0 Entries
+Show *
+Show
+Loading... *
+Loading...
+Processing... *
+Processing...
+Search *
+Search
+No Matching Records Found *
+No matching records found
+First *
+First
+Last *
+Last
+Next *
+Next
+Previous *
+Previous
+Copy *
+Copy
+Excel *
+Excel
+PDF *
+PDF
+Print *
+Print
+Saved Successfully *
+Saved successfully
+Saved Successfully *
+Saved Successfully
+Updated Successfully *
+Updated Successfully
+Deleted Successfully *
+Deleted Successfully
+Is The Borrower Of Loan *
+is the borrower of Loan
+Loan Currency And Account Currency Is Mismatch *
+Loan currency and account currency is mismatch
+Insufficient Account Balance *
+Insufficient account balance
+You Can Not Remove Base Currency ! *
+You can not remove base currency !
+Documents *
+Documents
+Sorry, Error Occured ! *
+Sorry, Error Occured !
+Email Send Sucessfully *
+Email Send Sucessfully
+Sorry, SMS Gateway Is Disabled ! *
+Sorry, SMS Gateway is disabled !
+SMS Send Sucessfully *
+SMS Send Sucessfully
+Updated Successfully *
+Updated successfully
+Interest Method Is Required *
+Interest method is required
+Interest Period Is Required *
+Interest period is required
+Interest Posting Period Is Required *
+Interest posting period is required
+Minimum Balance For Interest Is Required *
+Minimum balance for interest is required
+Last Savings Balance *
+Last Savings Balance
+Pro-Rata Basis *
+Pro-Rata Basis
+Every *
+Every
+Month *
+month
+Deleted Successfully *
+Deleted successfully
+Recaptcha Error! *
+Recaptcha error!
+Loan Details *
+Loan Details
+Loan Payment Made Sucessfully *
+Loan Payment Made Sucessfully
+You Can Not Use This Name ! *
+You can not use this name !
+Debit *
+Debit
+Credit *
+Credit
+Account Not Found *
+Account not found
+Invalid Member No *
+Invalid Member No
+Exchange Rate Is Required *
+Exchange rate is required
+Interest Has Already Posted For Selected Date Range ! *
+Interest has already posted for selected date range !
+Sorry No Data Found ! *
+Sorry no data found !
+Savings Interest *
+Savings Interest
+Interest Posted Successfully *
+Interest Posted Successfully
+Expense Details *
+Expense Details
+Update Expense *
+Update Expense
+In-Active *
+In-Active
+Account Type Not Found *
+Account type not found
+Withdraw Is Not Allowed For *
+Withdraw is not allowed for
+Sorry Minimum Account Balance Will Be Exceeded *
+Sorry Minimum account balance will be exceeded
+You Must Deposit Minimum *
+You must deposit minimum
+Language Created Successfully *
+Language Created successfully
+Removed Successfully *
+Removed successfully
+Account Details *
+Account Details
+Update Account *
+Update Account
+Initial Deposit *
+Initial Deposit
+Backup Created Successfully *
+Backup Created successfully
+Cache Removed Successfully *
+Cache Removed successfully
+Your Message Send Sucessfully *
+Your Message send sucessfully
+Error Occured, Your Email Configuration Is Incorrect ! *
+Error Occured, Your email configuration is incorrect !
+Pending *
+Pending
+Approved *
+Approved
+Completed *
+Completed
+Cancelled *
+Cancelled
+New Loan Added Successfully *
+New Loan added successfully
+Loan ID And Release Date Must Required ! *
+Loan ID and Release date must required !
+Loan Request Approved *
+Loan Request Approved
+Loan Request Rejected *
+Loan Request Rejected
+Sorry, This Loan Is Already Completed *
+Sorry, This Loan is already completed
+Details *
+Details
+Approve *
+Approve
+Reject *
+Reject
+Request Approved *
+Request Approved
+Request Rejected *
+Request Rejected
+The Amount Must Be At Least *
+The amount must be at least
+The Amount May Not Be Greater Than *
+The amount may not be greater than
+Withdraw Money Via *
+Withdraw Money via
+Withdraw Fee *
+Withdraw Fee
+Withdraw Request Submitted Successfully *
+Withdraw Request submitted successfully
+From Account And To Account Must Be Different *
+From account and to account must be different
+Withdraw And Transfer Is Not Allowed For *
+Withdraw and transfer is not allowed for
+Insufficient Balance ! *
+Insufficient balance !
+Transfer Money From A/C *
+Transfer Money from A/C
+To A/C *
+to A/C
+Received Money From A/C *
+Received Money from A/C
+Money Transfered Successfully *
+Money transfered successfully
+Something Went Wrong, Please Try Again! *
+Something went wrong, Please try again!
+Sender Account And Receiver Account Must Be Different ! *
+Sender account and receiver account must be different !
+Deposit Request Submited Successfully *
+Deposit Request submited successfully
+Deposit Via *
+Deposit via
+Your Loan Application Submitted Sucessfully And Your Application Is Now Under Review *
+Your Loan application submitted sucessfully and your application is now under review
+Loan Repayment *
+Loan Repayment
+Payment Made Sucessfully *
+Payment Made Sucessfully
+Deposit To *
+Deposit to
+Money Deposited Successfully *
+Money Deposited Successfully
+BlockChain API Having Issue. Please Use Valid API KEY And XPUB ! *
+BlockChain API having issue. Please use valid API KEY and XPUB !
+Sorry, Payment Not Completed ! *
+Sorry, Payment not completed !
+Deposit Via Stripe *
+Deposit Via Stripe
+Deposit Via *
+Deposit Via
+Create Your Account *
+Create Your Account
+Country Code *
+Country Code
+Privacy Policy *
+Privacy Policy
+Terms & Condition *
+Terms & Condition
+WELCOME TO *
+WELCOME TO
+Enter Your Valid Inforamtion And Create Your Account *
+Enter your valid inforamtion and create your account
+Reset Your Password *
+Reset Your Password
+Enter Your Email *
+Enter Your Email
+Submit *
+Submit
+Enter Your Registered Email For Getting Password Reset Link *
+Enter your registered email for getting password reset link
+Update Your Password *
+Update Your Password
+Click Here To Request Another *
+Click here to request another
+Enter Your Registered Email And Password And Login Into Your Account *
+Enter your registered email and password and login into your account
+Withdraw Requests *
+Withdraw Requests
+Rejected *
+Rejected
+Member *
+Member
+Account Number *
+Account Number
+Amount *
+Amount
+Method *
+Method
+Withdraw Request Details *
+Withdraw Request Details
+Withdraw Method *
+Withdraw Method
+Withdraw Amount Via *
+Withdraw Amount via
+Including Charge *
+Including Charge
+Customer Will Receive *
+Customer Will Receive
+Attachment *
+Attachment
+View Attachment *
+View Attachment
+Update Payment Gateway *
+Update Payment Gateway
+Live *
+Live
+Exchange Rate *
+Exchange Rate
+USD *
+USD
+Minimum Deposit Amount *
+Minimum Deposit Amount
+Maximum Deposit Amount *
+Maximum Deposit Amount
+Fixed Charge *
+Fixed Charge
+Charge In Percentage *
+Charge In Percentage
+Save Changes *
+Save Changes
+Add New Payment Gateway *
+Add New Payment Gateway
+Slug *
+Slug
+Supported Currencies *
+Supported Currencies
+Extra *
+Extra
+Automatic Gateways *
+Automatic Gateways
+Config *
+Config
+Update Page *
+Update Page
+Title *
+Title
+Publish *
+Publish
+Draft *
+Draft
+Create Page *
+Create Page
+Pages *
+Pages
+All FAQ *
+All FAQ
+Add New FAQ *
+Add New FAQ
+Question *
+Question
+Update FAQ *
+Update FAQ
+Answer *
+Answer
+Deactive *
+Deactive
+Update News *
+Update News
+Short Description *
+Short Description
+Content *
+Content
+Published *
+Published
+New News *
+New News
+All News *
+All News
+Teams *
+Teams
+Add Team Member *
+Add Team Member
+Role *
+Role
+View Team *
+View Team
+Testimonials *
+Testimonials
+Add Testimonial *
+Add Testimonial
+Testimonial *
+Testimonial
+Update Testimonial *
+Update Testimonial
+Services *
+Services
+Add New Service *
+Add New Service
+Update Service *
+Update Service
+Service Details *
+Service Details
+ICON *
+ICON
+BROWSE ICONS *
+BROWSE ICONS
+Update Withdraw Method *
+Update Withdraw Method
+Deactivate *
+Deactivate
+Minimum Amount *
+Minimum Amount
+Maximum Amount *
+Maximum Amount
+Descriptions *
+Descriptions
+Withdrawn Informations *
+Withdrawn Informations
+Add New Field *
+Add New Field
+Field Name *
+Field Name
+New Withdraw Method *
+New Withdraw Method
+Withdraw Methods *
+Withdraw Methods
+Update Transaction *
+Update Transaction
+Date *
+Date
+Debit/Credit *
+Debit/Credit
+Transaction Types *
+Transaction Types
+Deposit Money *
+Deposit Money
+Withdraw Money *
+Withdraw Money
+New Transaction *
+New Transaction
+Transaction History *
+Transaction History
+Type *
+Type
+Transaction Details *
+Transaction Details
+Note *
+Note
+Updated By *
+Updated By
+Expenses *
+Expenses
+Add New Expense *
+Add New Expense
+Expense Category *
+Expense Category
+Reference *
+Reference
+Expense Date *
+Expense Date
+Update Loan Product *
+Update Loan Product
+Interest Rate Per Year *
+Interest Rate Per Year
+Interest Type *
+Interest Type
+Flat Rate *
+Flat Rate
+Fixed Rate *
+Fixed Rate
+Mortgage Amortization *
+Mortgage amortization
+One-time Payment *
+One-time payment
+Term *
+Term
+Term Period *
+Term Period
+Day *
+Day
+Week *
+Week
+Month *
+Month
+Year *
+Year
+Late Payment Penalties *
+Late Payment Penalties
+Update Changes *
+Update Changes
+Add Loan Product *
+Add Loan Product
+Loan Products *
+Loan Products
+Interest Rate *
+Interest Rate
+Max Term *
+Max Term
+View Loan Product *
+View Loan Product
+Loan Calculator *
+Loan Calculator
+Apply Amount *
+Apply Amount
+First Payment Date *
+First Payment date
+Calculate *
+Calculate
+Payable Amount *
+Payable Amount
+Amount To Pay *
+Amount to Pay
+Penalty *
+Penalty
+Principal Amount *
+Principal Amount
+Interest *
+Interest
+Balance *
+Balance
+Update Loan Information *
+Update Loan Information
+Loan Has Already Approved. You Can Change Only Description And Remarks *
+Loan has already approved. You can change only description and remarks
+Loan ID *
+Loan ID
+Loan Product *
+Loan Product
+Borrower *
+Borrower
+First Payment Date *
+First Payment Date
+Release Date *
+Release Date
+Applied Amount *
+Applied Amount
+Remarks *
+Remarks
+Add New Loan *
+Add New Loan
+Loan List *
+Loan List
+All *
+All
+Member No *
+Member No
+View Loan Details *
+View Loan Details
+Guarantor *
+Guarantor
+Collateral *
+Collateral
+Repayments Schedule *
+Repayments Schedule
+Repayments *
+Repayments
+Add Loan ID, Release Date And First Payment Date Before Approving Loan Request *
+Add Loan ID, Release Date and First Payment Date before approving loan request
+Loan Type *
+Loan Type
+Click To Approve *
+Click to Approve
+Click To Reject *
+Click to Reject
+Total Payable *
+Total Payable
+Total Paid *
+Total Paid
+Due Amount *
+Due Amount
+Approved Date *
+Approved Date
+Approved By *
+Approved By
+Guarantors *
+Guarantors
+Add Guarantor *
+Add Guarantor
+Update Guarantor *
+Update Guarantor
+Grand Total *
+Grand Total
+All Collaterals *
+All Collaterals
+New Collateral *
+New Collateral
+Collateral Type *
+Collateral Type
+Serial Number *
+Serial Number
+Estimated Price *
+Estimated Price
+Late Penalty *
+Late Penalty
+Due *
+Due
+Unpaid *
+Unpaid
+Paid *
+Paid
+Total Amount *
+Total Amount
+Add Loan Repayment *
+Add Loan Repayment
+Payment Date *
+Payment Date
+Total Due *
+Total Due
+Due Amount Date *
+Due Amount Date
+Late Penalties *
+Late Penalties
+It Will Apply If Payment Date Is Over *
+It will apply if payment date is over
+Repayment Amount *
+Repayment Amount
+All Due Amount *
+All Due Amount
+Loan Repayments *
+Loan Repayments
+Add Repayment *
+Add Repayment
+Loan Repayment Details *
+Loan Repayment Details
+Transaction *
+Transaction
+View Transaction Details *
+View Transaction Details
+Update Branch *
+Update Branch
+Contact Email *
+Contact Email
+Contact Phone *
+Contact Phone
+Add New Branch *
+Add New Branch
+All Branch *
+All Branch
+Branch Details *
+Branch Details
+Update Member Information *
+Update Member Information
+First Name *
+First Name
+Last Name *
+Last Name
+Business Name *
+Business Name
+Branch *
+Branch
+Mobile *
+Mobile
+Gender *
+Gender
+Male *
+Male
+Female *
+Female
+City *
+City
+State *
+State
+Zip *
+Zip
+Credit Source *
+Credit Source
+Photo *
+Photo
+Login Details *
+Login Details
+Add New Member *
+Add New Member
+Member List *
+Member List
+Business *
+Business
+Member Details *
+Member Details
+Account Overview *
+Account Overview
+Transactions *
+Transactions
+Loans *
+Loans
+KYC Documents *
+KYC Documents
+Send Email *
+Send Email
+Send SMS *
+Send SMS
+Edit Member Details *
+Edit Member Details
+Account Type *
+Account Type
+Loan Guarantee *
+Loan Guarantee
+Current Balance *
+Current Balance
+Amount Paid *
+Amount Paid
+Documents Of *
+Documents of
+Add New Document *
+Add New Document
+Document Name *
+Document Name
+Document File *
+Document File
+Submitted At *
+Submitted At
+Update Document *
+Update Document
+User Email *
+User Email
+Message *
+Message
+Send *
+Send
+User Mobile *
+User Mobile
+Accounts Overview *
+Accounts Overview
+Upcomming Loan Payment *
+Upcomming Loan Payment
+Next Payment Date *
+Next Payment Date
+No Active Loan Available *
+No Active Loan Available
+Upcoming *
+Upcoming
+Pay Now *
+Pay Now
+Recent Transactions *
+Recent Transactions
+AC Number *
+AC Number
+DR/CR *
+DR/CR
+My Loans *
+My Loans
+Apply Loan *
+Apply Loan
+Apply New Loan *
+Apply New Loan
+Submit Application *
+Submit Application
+Due Payment Of *
+Due Payment Of
+It Will Only Apply If Payment Date Is Over *
+It will only apply if payment date is over
+Amount To Pay *
+Amount To Pay
+Select Account *
+Select Account
+Make Payment *
+Make Payment
+No Action *
+No Action
+Automatic Deposit Methods *
+Automatic Deposit Methods
+Deposit Limit *
+Deposit Limit
+Deposit Charge *
+Deposit Charge
+Deposit Now *
+Deposit Now
+Manual Deposit Methods *
+Manual Deposit Methods
+Credit Account *
+Credit Account
+Base Amount *
+Base Amount
+Charge Included *
+Charge Included
+Minimum Deposit *
+Minimum Deposit
+Maximum Deposit *
+Maximum Deposit
+Transaction Charge Will Be Applied *
+transaction charge will be applied
+Process *
+Process
+Alert *
+Alert
+Please Select Credit Account First ! *
+Please select credit account first !
+Deposit Amount *
+Deposit Amount
+Transaction Charge Will Be Apply *
+transaction charge will be apply
+Instructions *
+Instructions
+Sorry, Your Account Not Associated With Multiple Accounts *
+Sorry, Your account not associated with multiple accounts
+Own Account Transfer *
+Own Account Transfer
+From Account *
+From Account
+To Account *
+To Account
+Send Money *
+Send Money
+Other Account Transfer *
+Other Account Transfer
+Debit Account *
+Debit Account
+Deposit Requests *
+Deposit Requests
+Deposit Request *
+Deposit Request
+Withdraw Request *
+Withdraw Request
+Converted Amount *
+Converted Amount
+Charge Will Be Deduct From Withdrawal Amount *
+charge will be deduct from withdrawal amount
+Please Select Debit Account First ! *
+Please select debit account first !
+Withdraw Limit *
+Withdraw Limit
+Withdraw Charge *
+Withdraw Charge
+Withdraw Via *
+Withdraw Via
+Make Withdraw *
+Make Withdraw
+Payment Confirm *
+Payment Confirm
+Charge *
+Charge
+Total *
+Total
+Send Exact Amount *
+Send Exact Amount
+BTC Address *
+BTC Address
+Payment Not Completed *
+Payment not completed
+Deposit Failed *
+Deposit Failed
+Deposit Via VoguePay *
+Deposit via VoguePay
+Deposit Via Flutterwave *
+Deposit via Flutterwave
+Payment Cancelled *
+Payment Cancelled
+Account Balances *
+Account Balances
+Account Statement *
+Account Statement
+Start Date *
+Start Date
+End Date *
+End Date
+Filter *
+Filter
+DEBIT *
+DEBIT
+CREDIT *
+CREDIT
+Transactions Report *
+Transactions Report
+Transaction Type *
+Transaction Type
+Deposit *
+Deposit
+Withdraw *
+Withdraw
+Transfer *
+Transfer
+Fee *
+Fee
+All Account *
+All Account
+Add New Role *
+Add New Role
+Account Types *
+Account Types
+New Account Type *
+New Account Type
+Interest Method *
+Interest Method
+Interest Period *
+Interest Period
+Minimum Savings Balance *
+Minimum Savings Balance
+Daily Outstanding Balance *
+Daily Outstanding Balance
+Update Account Type *
+Update Account Type
+Account Type Details *
+Account Type Details
+Yearly Interest Rate *
+Yearly Interest Rate
+Every 1 Month *
+Every 1 month
+Every 3 Months *
+Every 3 months
+Every 6 Months *
+Every 6 months
+Every 12 Months *
+Every 12 months
+Minimum Balance For Interest *
+Minimum Balance for Interest
+Allow Withdraw *
+Allow Withdraw
+Minimum Account Balance *
+Minimum Account Balance
+Maintenance Fee *
+Maintenance Fee
+Maintenance Fee Will Be Deduct *
+Maintenance Fee will be deduct
+Interest Will Be Added? *
+Interest will be added?
+End Of Months *
+End of months
+Rd Of The Month *
+rd of the month
+St Of The Month *
+st of the month
+Minimum Balance For Interest Rate *
+Minimum Balance for Interest Rate
+Maintenance Fee Posting Month *
+Maintenance Fee Posting Month
+Deposit Request Details *
+Deposit Request Details
+Deposit Method *
+Deposit Method
+Deposit Amount Via *
+Deposit Amount via
+Deposit To Customer Amount *
+Deposit to Customer Amount
+Update Navigation Item *
+Update Navigation Item
+Navigation Type *
+Navigation Type
+Page *
+Page
+Dynamic URL *
+Dynamic URL
+Custom URL *
+Custom URL
+Select Page *
+Select Page
+URL *
+URL
+Icon *
+Icon
+Target *
+Target
+Same Window *
+Same Window
+New Window *
+New Window
+CSS Class *
+CSS Class
+CSS ID *
+CSS ID
+Add Navigation Item *
+Add Navigation Item
+Update Navigation *
+Update Navigation
+Add Navigation *
+Add Navigation
+Navigation List *
+Navigation List
+Manage *
+Manage
+Manage Menu Items *
+Manage Menu Items
+New Navigation Item *
+New Navigation Item
+Save Sorting *
+Save Sorting
+Accounts *
+Accounts
+Add New Account *
+Add New Account
+Select Member *
+Select Member
+Opening Balance *
+Opening Balance
+Loan Guarantee Amount *
+Loan Guarantee Amount
+Total Members *
+Total Members
+Pending Loans *
+Pending Loans
+My Profile Overview *
+My Profile Overview
+Membership Overview *
+Membership Overview
+Update Collateral *
+Update Collateral
+Add New Collateral *
+Add New Collateral
+Collateral List *
+Collateral List
+View Collateral Details *
+View Collateral Details
+Attachments *
+Attachments
+Update Deposit Method *
+Update Deposit Method
+Deposit Informations *
+Deposit Informations
+New Deposit Method *
+New Deposit Method
+Deposit Methods *
+Deposit Methods
+Transaction Categories *
+Transaction Categories
+New Category *
+New Category
+Related To *
+Related To
+Account Maintenance Fee *
+Account Maintenance Fee
+Update Category *
+Update Category
+Category Details *
+Category Details
+Interest Review *
+Interest Review
+POST INTEREST *
+POST INTEREST
+Amount Greater Than Zero Will Post To User Account *
+Amount greater than zero will post to user account
+Account *
+Account
+Date Range *
+Date Range
+Calculation Process May Take Longer Depends On Members Limit *
+Calculation process may take longer depends on members limit
+Interest Calculation *
+Interest Calculation
+Interest Posting Date *
+Interest Posting Date
+Calculate Interest *
+Calculate Interest
+Interest Of *
+Interest of
+Last Posted On *
+last posted on
+Update Translations *
+Update Translations
+Create New Language *
+Create New Language
+Update SMS Template *
+Update SMS Template
+Short Code *
+Short Code
+SMS Templates *
+SMS Templates
+SMS Template Details *
+SMS Template Details
+SMS Gateways *
+SMS Gateways
+Google Recaptcha V3 *
+Google Recaptcha V3
+Twilio *
+Twilio
+SMS Gateway *
+SMS Gateway
+Textmagic *
+Textmagic
+Nexmo *
+Nexmo
+Infobip *
+Infobip
+Account SID *
+Account SID
+Auth Token *
+Auth Token
+From Number *
+From Number
+Username *
+Username
+API V2 KEY *
+API V2 KEY
+API KEY *
+API KEY
+API Secret *
+API Secret
+API BASE URL *
+API BASE URL
+GOOGLE RECAPTCHA V3 *
+GOOGLE RECAPTCHA V3
+Enable Recaptcha V3 *
+Enable Recaptcha v3
+RECAPTCHA SITE KEY *
+RECAPTCHA SITE KEY
+RECAPTCHA SECRET KEY *
+RECAPTCHA SECRET KEY
+Run Cronjobs Every *
+Run Cronjobs every
+Minutes *
+minutes
+Cronjobs Command For CPanel *
+Cronjobs Command for cPanel
+Schedule Task Command For Plesk *
+Schedule Task Command for Plesk
+Update Notification Template *
+Update Notification Template
+Notification Templates *
+Notification Templates
+Notification Template Details *
+Notification Template Details
+Create Email Template *
+Create Email Template
+Email Template Details *
+Email Template Details
+Expense Categories *
+Expense Categories
+Add New Category *
+Add New Category
+Update Expense Category *
+Update Expense Category
+Member Documents *
+Member Documents
+Document *
+Document
+User Id *
+User Id
+Update Currency *
+Update Currency
+Base Currency *
+Base Currency
+Add New Currency *
+Add New Currency
+Base Currency Exchange Rate Always 1.00 *
+Base Currency exchange rate always 1.00
+Currency List *
+Currency List
+Currency Details *
+Currency Details
+Expense Report *
+Expense Report
+Expense Type *
+Expense Type
+Total Expenses *
+Total Expenses
+Loan Report *
+Loan Report
+Loan Due Report *
+Loan Due Report
+Total Due Amount *
+Total Due Amount
+You Have *
+You have
+New Notifications *
+new notifications
+You Have No New Notification! *
+You have no new notification!
+You Have No Notification! *
+You have no notification!
+Notification Details *
+Notification Details
+Membership Details *
+Membership Details
+Transfer Money *
+Transfer Money
+Others Account Transfer *
+Others Account Transfer
+Automatic Deposit *
+Automatic Deposit
+Manual Deposit *
+Manual Deposit
+Transaction Requests *
+Transaction Requests
+Reports *
+Reports
+Transaction Report *
+Transaction Report
+Account Balance *
+Account Balance
+Branches *
+Branches
+Members *
+Members
+View Members *
+View Members
+Add Member *
+Add Member
+All Loans *
+All Loans
+Active Loans *
+Active Loans
+All Accounts *
+All Accounts
+All Expense *
+All Expense
+Manual Gateways *
+Manual Gateways
+Supported Currency *
+Supported Currency
+Regards *
+Regards
+The Two Factor Code Has Expired. Please Login Again. *
+The two factor code has expired. Please login again.
+Sorry, This Transaction Is Associated With A Loan ! *
+Sorry, this transaction is associated with a loan !
+Email Body Is Required *
+Email body is required
+SMS Text Is Required *
+SMS text is required
+Notification Text Is Required *
+Notification text is required
+Invalid Account *
+Invalid account
+Insufficient Balance For Deducting Loan Application And Insurance Fee ! *
+Insufficient balance for deducting loan application and insurance fee !
+No Account Found For Deducting Loan Processing Fee *
+No account found for deducting loan processing fee
+You Need To Pay Minimum *
+You need to pay minimum
+Deposit Limit *
+Deposit limit
+Withdraw Limit *
+Withdraw limit
+Own Account Transfer Fee *
+Own Account Transfer Fee
+Invalid Account Number ! *
+Invalid Account Number !
+Other Account Transfer Fee *
+Other Account Transfer Fee
+Values Is Required For Select Box *
+Values is required for select box
+Please Use Valid XPUB And API KEY ! *
+Please use valid XPUB and API KEY !
+Member Request Accepted *
+Member Request Accepted
+Member Request Rejected *
+Member Request Rejected
+Nothing Imported, Data May Already Exists ! *
+Nothing Imported, Data may already exists !
+Rows Imported Sucessfully *
+Rows Imported Sucessfully
+OTP You Have Entered Does Not Match *
+OTP you have entered does not match
+Sorry, You Have Attempts Maximum Number Of Times To Resend Code! *
+Sorry, You have attempts maximum number of times to resend code!
+New OTP Has Been Sent To Your Email ! *
+New OTP has been sent to your email !
+You Must Agree With Our Privacy Policy And Terms Of Use *
+You must agree with our privacy policy and terms of use
+Registration Completed Successfully. You Will Be Notified Once Approved By The Authority. *
+Registration completed successfully. You will be notified once approved by the authority.
+Invalid Operation ! *
+Invalid Operation !
+You Must Pay The Full Repayment Because This Is Your Last Repayment Schedule *
+You must pay the full repayment because this is your last repayment schedule
+Expense Overview *
+Expense Overview
+Bulk Import *
+Bulk Import
+Custom Fields *
+Custom Fields
+Member Requests *
+Member Requests
+Expense *
+Expense
+Loan Repayment Report *
+Loan Repayment Report
+Revenue Report *
+Revenue Report
+Deposit & Withdraw Analytics *
+Deposit & Withdraw Analytics
+Active Loan Balances *
+Active Loan Balances
+Paid Amount *
+Paid Amount
+Due Loan Payments *
+Due Loan Payments
+Last Payment Date *
+Last Payment Date
+Due Repayments *
+Due Repayments
+Approve Member Request *
+Approve Member Request
+Import Members *
+Import Members
+Upload XLSX File *
+Upload XLSX File
+Only XLSX File Are Allowed *
+Only XLSX file are allowed
+First Row Need To Keep Blank Or Use For Column Name Only *
+First row need to keep blank or use for column name only
+Required Field Must Exists Otherwise Entire Row Will Be Ignore *
+Required field must exists otherwise entire row will be ignore
+Download Sample File *
+Download Sample File
+Limits & Charges *
+Limits & Charges
+Add Row *
+Add Row
+Charge Applied *
+Charge Applied
+Amount Limit *
+Amount Limit
+Fee Deduct Account *
+Fee Deduct Account
+Repayment Due Date *
+Repayment Due Date
+Total Principal Paid *
+Total Principal Paid
+Total Interest Paid *
+Total Interest Paid
+Total Penalties Paid *
+Total Penalties Paid
+Preview *
+Preview
+Reducing Amount *
+Reducing Amount
+Loan Status *
+Loan Status
+Revenue Type *
+Revenue Type
+Total Revenue *
+Total Revenue
+Loan Application Fee *
+Loan Application Fee
+Loan Processing Fee *
+Loan Processing Fee
+Please Set Starting Account Number To Your Selected Account Type Before Creating New Account! *
+Please set starting account number to your selected account type before creating new account!
+Close *
+Close
+Upcoming Loan Payment *
+Upcoming Loan Payment
+Transaction Fee *
+Transaction Fee
+Version *
+Version
+Default Branch Name *
+Default Branch Name
+Starting Member No *
+Starting Member No
+Member Sign Up *
+Member Sign Up
+Disabled *
+Disabled
+Enabled *
+Enabled
+Two Factor Login *
+Two Factor Login
+You Must Configure Valid SMTP Settings Before Enabling Two Factor Login! *
+You must configure valid SMTP settings before enabling two factor login!
+Own Account Transfer Fee Type *
+Own Account Transfer Fee Type
+Percentage *
+Percentage
+Fixed *
+Fixed
+Other Account Transfer Fee Type *
+Other Account Transfer Fee Type
+Send Test Email *
+Send Test Email
+Email To *
+Email To
+Run Cronjobs At Least Every *
+Run Cronjobs at least every
+SMS *
+SMS
+Local *
+Local
+Email Notification *
+Email Notification
+SMS Notification *
+SMS Notification
+Local Notification *
+Local Notification
+Exchange Rate Will Be Used To Convert Your Base Currency To Gateway Currency. If Your Base Currency And Gateway Currency Is Same Then Exchange Rate Will Be 1.00 *
+Exchange rate will be used to convert your base currency to gateway currency. If your base currency and gateway currency is same then exchange rate will be 1.00
+Exchange Rate Will Be Used For Crypto Currency To Convert Your Base Currency To USD. If Your Base Currency Is USD Then Exchange Rate Will Be 1.00 *
+Exchange rate will be used for crypto currency to convert your base currency to USD. If your base currency is USD then exchange rate will be 1.00
+Loan ID Prefix *
+Loan ID Prefix
+Next Loan ID *
+Next Loan ID
+Loan Insurance Fee *
+Loan Insurance Fee
+Starting Loan ID *
+Starting Loan ID
+Loan Application Fee Type *
+Loan Application Fee Type
+Loan Processing Fee Type *
+Loan Processing Fee Type
+Color *
+Color
+User Details *
+User Details
+Admin Will Get Full Access And User Will Get Role Based Access Only. *
+Admin will get full access and user will get role based access only.
+If Not Assign Any Branch Then User Will Get Default Branch Access. *
+If not assign any branch then user will get default branch access.
+Due Repayment Date *
+Due Repayment Date
+Account Number Prefix *
+Account Number Prefix
+Next Account Number *
+Next Account Number
+Starting Account Number *
+Starting Account Number
+Loan Payments *
+Loan Payments
+Please Set Starting Loan ID To Your Selected Loan Product Before Creating New Loan! *
+Please set starting loan ID to your selected loan product before creating new loan!
+Field Type *
+Field Type
+Text Box *
+Text Box
+Number *
+Number
+Select Box *
+Select Box
+Textarea *
+Textarea
+File (PNG,JPG,PDF) *
+File (PNG,JPG,PDF)
+Select Options *
+Select Options
+Add Select Box Options By Comma Seperator *
+Add select box options by comma seperator
+Field Size *
+Field Size
+Max File Size *
+Max File Size
+MB *
+MB
+Is Required *
+Is Required
+Update Custom Field *
+Update Custom Field
+Profile Overview *
+Profile Overview
+Select Gender *
+Select Gender
+Credit Source *
+Credit source
+One Time Password Has Been Sent To Your Email Address. *
+One time password has been sent to your email address.
+Enter Your OTP *
+Enter Your OTP
+Resend OTP Code *

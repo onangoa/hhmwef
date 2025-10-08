@@ -1,0 +1,48 @@
+[16-Jan-2025 12:16:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/sansoftd/sacco.kesmak.co.ke/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/sansoftd/sacco.kesmak.co.ke/config/database.php on line 18
+[17-Jan-2025 21:04:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/sansoftd/sacco.kesmak.co.ke/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/sansoftd/sacco.kesmak.co.ke/config/database.php on line 18
+[06-Apr-2025 03:14:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/sansoftd/hhswelfare.co.ke/config/app.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/sansoftd/hhswelfare.co.ke/config/app.php on line 19
+[06-Apr-2025 05:43:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/sansoftd/hhswelfare.co.ke/config/app.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/sansoftd/hhswelfare.co.ke/config/app.php on line 19
+[06-Apr-2025 20:28:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/sansoftd/hhswelfare.co.ke/config/app.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/sansoftd/hhswelfare.co.ke/config/app.php on line 19
+[07-Apr-2025 05:25:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/sansoftd/hhswelfare.co.ke/config/app.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/sansoftd/hhswelfare.co.ke/config/app.php on line 19
+[07-Apr-2025 08:07:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/sansoftd/hhswelfare.co.ke/config/app.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/sansoftd/hhswelfare.co.ke/config/app.php on line 19
+[08-Apr-2025 01:00:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/sansoftd/hhswelfare.co.ke/config/app.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/sansoftd/hhswelfare.co.ke/config/app.php on line 19
+[06-May-2025 09:01:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/sansoftd/hhswelfare.co.ke/config/app.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/sansoftd/hhswelfare.co.ke/config/app.php on line 19
+[06-Oct-2025 14:05:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/sansoftd/welfare/config/cache.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/sansoftd/welfare/config/cache.php on line 18
+[06-Oct-2025 14:05:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/sansoftd/welfare/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/sansoftd/welfare/config/session.php on line 21
+[06-Oct-2025 14:05:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/sansoftd/welfare/config/app.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/sansoftd/welfare/config/app.php on line 19
