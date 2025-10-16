@@ -7,6 +7,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\ProfileController;
@@ -50,6 +51,20 @@ use App\Http\Controllers\NextOfKinController;
 |
  */
 
+// Member Registration Wizard Routes (Public) - Placed at the very top
+Route::get('join', [RegistrationController::class, 'createJoin'])->name('join.join');
+Route::post('join', [RegistrationController::class, 'storeJoin'])->name('join.join.store');
+Route::get('register/kin', [RegistrationController::class, 'createKin'])->name('join.kin');
+Route::post('register/kin', [RegistrationController::class, 'storeKin'])->name('join.kin.store');
+Route::get('register/spouse', [RegistrationController::class, 'createSpouse'])->name('join.spouse');
+Route::post('register/spouse', [RegistrationController::class, 'storeSpouse'])->name('join.spouse.store');
+Route::get('register/children', [RegistrationController::class, 'createChildren'])->name('join.children');
+Route::post('register/children', [RegistrationController::class, 'storeChildren'])->name('join.children.store');
+Route::get('register/parents', [RegistrationController::class, 'createParents'])->name('join.parents');
+Route::post('register/parents', [RegistrationController::class, 'storeParents'])->name('join.parents.store');
+Route::get('register/parentsinlaw', [RegistrationController::class, 'createParentsInLaw'])->name('join.parentsinlaw');
+Route::post('register/parentsinlaw', [RegistrationController::class, 'storeParentsInLaw'])->name('join.parentsinlaw.store');
+
 Route::group(['middleware' => ['install']], function () {
 
     Route::get('/', function () {
@@ -58,6 +73,9 @@ Route::group(['middleware' => ['install']], function () {
 
     Auth::routes();
     Route::get('/logout', [LoginController::class, 'logout']);
+});
+
+Route::group(['middleware' => ['install']], function () {
 
     Route::get('verify_2fa/resend', [TwoFactorController::class, 'resend'])->name('verify_2fa.resend');
     Route::get('verify_2fa', [TwoFactorController::class, 'index'])->name('verify_2fa.index');
@@ -150,8 +168,8 @@ Route::group(['middleware' => ['install']], function () {
                 Route::get('custom_fields/{table}', [CustomFieldController::class, 'index'])->name('custom_fields.index');
 
                 //Next Of Kin
-                Route::resource('next_of_kin', NextOfKinController::class);
-                Route::get('member-nextofkin/{member_id}', [MemberController::class, 'nextofkin'])->name('member_nextofkin');
+                Route::get('member-nextofkin/create', [MemberController::class, 'createKin'])->name('member.kin.create');
+                Route::post('member-nextofkin/store', [MemberController::class, 'storeKin'])->name('member.kin.store');
 
                 //Members Documents
                 Route::get('member_documents/{member_id}', [MemberDocumentController::class, 'index'])->name('member_documents.index');
@@ -248,6 +266,7 @@ Route::group(['middleware' => ['install']], function () {
 
 });
 
+
 Route::namespace('Gateway')->prefix('callback')->name('callback.')->group(function () {
     //Fiat Currency
 });
@@ -261,3 +280,7 @@ Route::get('/login/{provider}/callback', [SocialController::class, 'callback']);
 
 //Ajax Select2 Controller
 Route::get('ajax/get_table_data', [Select2Controller::class, 'get_table_data']);
+
+Route::get('/payment', function () {
+    return view('payment');
+});

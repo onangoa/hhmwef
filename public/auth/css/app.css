@@ -1,0 +1,7 @@
+.multisteps-form__panel {
+    display: none;
+}
+
+.multisteps-form__panel.js-active {
+    display: block;
+}

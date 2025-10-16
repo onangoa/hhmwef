@@ -33,18 +33,21 @@
 		<link rel="stylesheet" href="{{ public_asset('backend/assets/css/responsive.css?v=1.0') }}">
 		
 		<!-- Modernizr -->
-		<script src="{{ public_asset('backend/assets/js/vendor/modernizr-3.6.0.min.js') }}"></script>     
+		<script src="{{ public_asset('backend/assets/js/vendor/modernizr-3.6.0.min.js') }}"></script>
+		    
+<link rel="stylesheet" href="{{ public_asset('backend/assets/css/multisteps-form.css') }}">
+		    <link rel="stylesheet" href="{{ asset('public/backend/assets/css/multisteps-form.css') }}">
 
 		@if(get_option('backend_direction') == "rtl")
-			<link rel="stylesheet" href="{{ public_asset('backend/plugins/bootstrap/css/bootstrap-rtl.min.css') }}">
-			<link rel="stylesheet" href="{{ public_asset('backend/assets/css/rtl/style.css?v=1.0') }}">
+		 <link rel="stylesheet" href="{{ asset('public/backend/plugins/bootstrap/css/bootstrap-rtl.min.css') }}">
+		 <link rel="stylesheet" href="{{ asset('public/backend/assets/css/rtl/style.css?v=1.0') }}">
 		@endif
 
 		@include('layouts.others.languages')
-			
-    </head>
+		 
+		  </head>
 
-    <body>  
+		  <body id="app">
 		<!-- Main Modal -->
 		<div id="main_modal" class="modal" tabindex="-1" role="dialog">
 		    <div class="modal-dialog modal-lg" role="document">
@@ -252,9 +255,11 @@
 
         <!-- App js -->
         <script src="{{ public_asset('backend/assets/js/scripts.js?v=1.4') }}"></script>
+        
+        <script src="{{ public_asset('backend/assets/js/multisteps-form.js') }}"></script>
 
-		<script type="text/javascript">		
-		(function($) {
+  <script type="text/javascript">
+  (function($) {
 
     		"use strict";		
 			

@@ -91,14 +91,9 @@ class MemberController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request) {
-        $customFields = CustomField::where('table', 'members')
-            ->where('status', 1)
-            ->orderBy("id", "asc")
-            ->get();
-
-        $memberNo = get_option('starting_member_no');
-        return view('backend.member.create', compact('customFields', 'memberNo'));
+    public function createJoin(Request $request)
+    {
+        return view('backend.member.join');
     }
 
    
@@ -197,129 +192,53 @@ class MemberController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
-        $validationRules = [
-            'first_name'   => 'required',
-            'last_name'    => 'required',
-            'email'        => 'nullable|email|unique:members|max:191',
-            // 'member_no'    => 'required|unique:members|max:50',
-            'country_code' => 'required_with:mobile',
-            'photo'        => 'nullable|image',
-            //User Login Attributes
-            // 'name'         => 'required_if:client_login,1|max:191',
-            // 'login_email'  => 'required_if:client_login,1|email|unique:users,email|max:191',
-            // 'password'     => 'required_if:client_login,1|max:20|min:6',
-            // 'status'       => 'required_if:client_login,1',
-            'payrollno'   => 'required',
-            'institution'   => 'required',
-            'workstation'   => 'required',
-            'department'   => 'required',
-            'idno'   => 'required',
-            'middle_name'   => 'required'
-        ];
+    public function storeJoin(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'full_name' => 'required|string|max:255',
+            'id_number' => 'required|string|max:255|unique:members,id_number',
+            'institution' => 'required|string|max:255',
+            'work_station' => 'required|string|max:255',
+            'state_department' => 'required|string|max:255',
+            'payroll_number' => 'required|string|max:255|unique:members,payroll_number',
+            'email_address' => 'required|email|max:255|unique:users,email',
+            'phone_numbers' => 'required|string|max:255',
+            'postal_address' => 'required|string|max:255',
+            'declaration_agree' => 'accepted',
+        ]);
 
-        $validationMessages = [
-            'name.required_if'           => 'Name is required',
-            'password.required_if'       => 'Password is required',
-            'country_code.required_with' => 'Country code is required',
-            'payrollno'   => 'Payroll number required',
-            'institution'   => 'Institution is required',
-            'workstation'   => 'Workstation is required',
-            'department'   => 'Department is required',
-            'idno'   => 'ID number is required',
-        ];
-
-        // Custom field validation
-        $customFields = CustomField::where('table', 'members')
-            ->orderBy("id", "desc")
-            ->get();
-        $customValidation = generate_custom_field_validation($customFields);
-
-        $validationRules = array_merge($validationRules, $customValidation['rules']);
-        $validationMessages = array_merge($validationMessages, $customValidation['messages']);
-
-        $validator = Validator::make($request->all(), $validationRules, $validationMessages);
-
-        // if ($validator->fails()) {
-        //     if ($request->ajax()) {
-        //         return response()->json(['result' => 'error', 'message' => $validator->errors()->all()]);
-        //     } else {
-                return redirect()->route('members.create')
-                    ->withErrors($validator)
-                    ->withInput();
-        //     }
-        // }
-
-        $photo = 'default.png';
-        if ($request->hasfile('photo')) {
-            $file  = $request->file('photo');
-            $photo = time() . $file->getClientOriginalName();
-            $file->move(public_path() . "/uploads/profile/", $photo);
+        if ($validator->fails()) {
+            return redirect()->route('join.join')
+                ->withErrors($validator)
+                ->withInput();
         }
 
-        DB::beginTransaction();
+        $request->session()->put('registration_data', $request->all());
 
-        // Store custom field data
-        $customFieldsData = store_custom_field_data($customFields);
+        return redirect()->route('join.kin.create');
+    }
 
-        //Create Login details
-        if ($request->client_login == 1) {
-            $user                  = new User();
-            $user->name            = $request->input('name');
-            $user->email           = $request->input('email');
-            $user->password        = Hash::make('123456');
-            $user->user_type       = 'customer';
-            $user->status          = $request->input('status');
-            $user->profile_picture = $photo;
-            $user->save();
-        }
+    public function createKin(Request $request)
+    {
+        $registration_data = $request->session()->get('registration_data');
+        $member = new \App\Models\Member($registration_data);
+        return view('backend.member.kin_create', compact('member'));
+    }
 
-        $member             = new Member();
-        $member->first_name = $request->input('first_name');
-        $member->last_name  = $request->input('last_name');
-        if (auth()->user()->user_type == 'admin') {
-            $member->branch_id = $request->branch_id;
-        } else {
-            $member->branch_id = auth()->user()->branch_id;
-        }
-        if ($request->client_login == 1) {
-            $member->user_id = $user->id;
-        }
-        $member->email         = $request->input('email');
-        $member->country_code  = $request->input('country_code');
-        $member->mobile        = $request->input('mobile');
-        // $member->business_name = $request->input('business_name');
-        $member->member_no     = 456; //get_option('starting_member_no', $request->input('member_no'));
-        // $member->gender        = $request->input('gender');
-        // $member->city          = $request->input('city');
-        // $member->state         = $request->input('state');
-        // $member->zip           = $request->input('zip');
-        // $member->address       = $request->input('address');
-        // $member->credit_source = $request->input('credit_source');
-        $member->photo         = $photo;
-        $member->custom_fields = json_encode($customFieldsData);
-        $member->payrollno= $request->input('payrollno');
-        $member->institution= $request->input('institution');
-        $member->workstation= $request->input('workstation');
-        $member->department= $request->input('department');
-        $member->idno = $request->input('idno');
-        $member->middle_name= $request->input('middle_name');
+    public function storeKin(Request $request)
+    {
+        $request->validate([
+            'kin_full_name' => 'required|string|max:255',
+            'kin_address' => 'required|string|max:255',
+            'kin_id_number' => 'required|string|max:255',
+            'kin_phone' => 'required|string|max:255',
+            'kin_email' => 'nullable|email|max:255',
+            'kin_relationship' => 'required|string|max:255',
+        ]);
 
-        $member->save();
+        $request->session()->put('kin_data', $request->all());
 
-        //Increment Member No
-        $memberNo = get_option('starting_member_no');
-        if ($memberNo != '') {
-            update_option('starting_member_no', $memberNo + 1);
-        }
-
-        DB::commit();
-
-        if (!$request->ajax()) {
-            return redirect()->route('members.create')->with('success', _lang('Saved Successfully'));
-        } else {
-            return response()->json(['result' => 'success', 'action' => 'store', 'message' => _lang('Saved Successfully'), 'data' => $member, 'table' => '#members_table']);
-        }
+        return redirect()->route('join.spouse.create');
     }
 
     /**
@@ -761,4 +680,129 @@ class MemberController extends Controller {
     //     $memberNo = get_option('starting_member_no');
     //     return view('backend.member.create', compact('customFields', 'memberNo'));
     // }
+
+    public function createSpouse(Request $request)
+    {
+        $registration_data = $request->session()->get('registration_data');
+        $member = new \App\Models\Member($registration_data);
+        return view('backend.member.spouse_create', compact('member'));
+    }
+
+    public function storeSpouse(Request $request)
+    {
+        $request->session()->put('spouse_data', $request->all());
+        return redirect()->route('join.children.create');
+    }
+
+    public function createChildren(Request $request)
+    {
+        $registration_data = $request->session()->get('registration_data');
+        $member = new \App\Models\Member($registration_data);
+        return view('backend.member.children_create', compact('member'));
+    }
+
+    public function storeChildren(Request $request)
+    {
+        $request->session()->put('children_data', $request->all());
+        return redirect()->route('join.parents.create');
+    }
+
+    public function createParents(Request $request)
+    {
+        $registration_data = $request->session()->get('registration_data');
+        $member = new \App\Models\Member($registration_data);
+        return view('backend.member.parents_create', compact('member'));
+    }
+
+    public function storeParents(Request $request)
+    {
+        $request->session()->put('parents_data', $request->all());
+        return redirect()->route('join.parentsinlaw.create');
+    }
+
+    public function createParentsInLaw(Request $request)
+    {
+        $registration_data = $request->session()->get('registration_data');
+        $member = new \App\Models\Member($registration_data);
+        return view('backend.member.parentsinlaw_create', compact('member'));
+    }
+
+    public function storeParentsInLaw(Request $request)
+    {
+        $request->session()->put('parentsinlaw_data', $request->all());
+
+        $registration_data = $request->session()->get('registration_data');
+        $kin_data = $request->session()->get('kin_data');
+        $spouse_data = $request->session()->get('spouse_data');
+        $children_data = $request->session()->get('children_data');
+        $parents_data = $request->session()->get('parents_data');
+        $parentsinlaw_data = $request->session()->get('parentsinlaw_data');
+
+        DB::beginTransaction();
+
+        // Create User
+        $user = new User();
+        $user->name = $registration_data['full_name'];
+        $user->email = $registration_data['email_address'];
+        $user->password = Hash::make('123456');
+        $user->user_type = 'customer';
+        $user->status = 0; // Pending approval
+        $user->save();
+
+        // Create Member
+        $member = new Member();
+        $name_parts = explode(' ', $registration_data['full_name'], 2);
+        $member->first_name = $name_parts[0];
+        $member->last_name = $name_parts[1] ?? '';
+        $member->id_number = $registration_data['id_number'];
+        $member->institution = $registration_data['institution'];
+        $member->work_station = $registration_data['work_station'];
+        $member->state_department = $registration_data['state_department'];
+        $member->payroll_number = $registration_data['payroll_number'];
+        $member->email = $registration_data['email_address'];
+        $member->phone_numbers = $registration_data['phone_numbers'];
+        $member->postal_address = $registration_data['postal_address'];
+        $member->declaration_agree = isset($registration_data['declaration_agree']);
+        $member->user_id = $user->id;
+        $member->status = 0; // Pending approval
+
+        // Kin
+        $member->nextofkin_name = $kin_data['kin_full_name'] ?? null;
+        $member->nextofkin_address = $kin_data['kin_address'] ?? null;
+        $member->nextofkin_id_number = $kin_data['kin_id_number'] ?? null;
+        $member->nextofkin_phone_number = $kin_data['kin_phone'] ?? null;
+        $member->nextofkin_email = $kin_data['kin_email'] ?? null;
+        $member->nextofkin_Relationship = $kin_data['kin_relationship'] ?? null;
+
+        // Spouse
+        $member->spouse_name = $spouse_data['spouse_name'] ?? null;
+        $member->spouse_address = $spouse_data['spouse_address'] ?? null;
+        $member->spouse_id_number = $spouse_data['spouse_id_number'] ?? null;
+        $member->spouse_phone_number = $spouse_data['spouse_phone_number'] ?? null;
+        $member->spouse_email = $spouse_data['spouse_email'] ?? null;
+
+        // Children
+        $member->child_name = isset($children_data['child_name']) ? json_encode($children_data['child_name']) : null;
+        $member->child_age = isset($children_data['child_age']) ? json_encode($children_data['child_age']) : null;
+        $member->child_phone_number = isset($children_data['child_phone_number']) ? json_encode($children_data['child_phone_number']) : null;
+
+        // Parents
+        $member->parent_name = isset($parents_data['parent_name']) ? json_encode($parents_data['parent_name']) : null;
+        $member->parent_relationship = isset($parents_data['parent_relationship']) ? json_encode($parents_data['parent_relationship']) : null;
+        
+        // Parents In Law
+        $custom_fields = [];
+        $custom_fields['parent_in_law_name'] = $parentsinlaw_data['parent_in_law_name'] ?? null;
+        $custom_fields['parent_in_law_relationship'] = $parentsinlaw_data['parent_in_law_relationship'] ?? null;
+        $member->custom_fields = json_encode($custom_fields);
+
+        $member->save();
+
+        DB::commit();
+
+        // Clear session data
+        $request->session()->forget(['registration_data', 'kin_data', 'spouse_data', 'children_data', 'parents_data', 'parentsinlaw_data']);
+
+        return redirect()->route('login')->with('success', 'Registration complete. Your application is pending approval.');
+    }
 }

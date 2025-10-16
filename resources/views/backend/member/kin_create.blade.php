@@ -1,215 +1,111 @@
-@extends('layouts.app')
+@extends('layouts.wizard')
 
 @section('content')
-<form method="post" class="validate" autocomplete="off" action="{{ route('members.store') }}" enctype="multipart/form-data">
-	{{ csrf_field() }}
-	<div class="row">
-		<div class="col-lg-8">
-			<div class="card">
-				<div class="card-header">
-					<h4 class="header-title">{{ _lang('Add New Member') }}</h4>
-				</div>
-				<div class="card-body">
-					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label">{{ _lang('First Name') }}</label>
-								<input type="text" class="form-control" name="first_name" value="{{ old('first_name') }}" required>
-							</div>
-						</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Next of Kin Details 2') }}</div>
 
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label">{{ _lang('Last Name') }}</label>
-								<input type="text" class="form-control" name="last_name" value="{{ old('last_name') }}" required>
-							</div>
-						</div>
+                <div class="card-body">
+                    <form method="POST" action="{{ route('join.kin.store') }}">
+                        @csrf
 
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label">{{ _lang('Member No') }}</label>
-								<input type="text" class="form-control" name="member_no" value="{{ old('member_no', $memberNo) }}" required {{ $memberNo != '' ? 'readonly' : '' }}>
-							</div>
-						</div>
+                        <div class="form-group row">
+                            <label for="kin_full_name" class="col-md-4 col-form-label text-md-right">{{ __('Full Name') }}</label>
 
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label">{{ _lang('Business Name') }}</label>
-								<input type="text" class="form-control" name="business_name" value="{{ old('business_name') }}">
-							</div>
-						</div>
+                            <div class="col-md-6">
+                                <input id="kin_full_name" type="text" class="form-control @error('kin_full_name') is-invalid @enderror" name="kin_full_name" value="{{ old('kin_full_name') }}" required autocomplete="name" autofocus>
 
-						@if(auth()->user()->user_type == 'admin')
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label">{{ _lang('Branch') }}</label>
-								<select class="form-control select2" name="branch_id">
-									<option value="">{{ get_option('default_branch_name', 'Main Branch') }}</option>
-									{{ create_option('branches', 'id', 'name', auth()->user()->branch_id) }}
-                                </select>
-							</div>
-						</div>
-						@else
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label">{{ _lang('Branch') }}</label>
-								<select class="form-control" name="branch_id" disabled>
-									<option value="">{{ get_option('default_branch_name', 'Main Branch') }}</option>
-									{{ create_option('branches', 'id', 'name', auth()->user()->branch_id) }}
-                                </select>
-							</div>
-						</div>
-						@endif
+                                @error('kin_full_name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label">{{ _lang('Email') }}</label>
-								<input type="text" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
+                        <div class="form-group row">
+                            <label for="kin_address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
 
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label">{{ _lang('Country Code') }}</label>
-								<select class="form-control select2" name="country_code">
-									<option value="">{{ _lang('Country Code') }}</option>
-									@foreach(get_country_codes() as $key => $value)
-									<option value="{{ $value['dial_code'] }}" {{ old('country_code') == $value['dial_code'] ? 'selected' : '' }}>{{ $value['country'].' (+'.$value['dial_code'].')' }}</option>
-									@endforeach
-								</select>
-							</div>
-						</div>
+                            <div class="col-md-6">
+                                <input id="kin_address" type="text" class="form-control @error('kin_address') is-invalid @enderror" name="kin_address" value="{{ old('kin_address') }}" required>
 
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label">{{ _lang('Mobile') }}</label>
-								<input type="text" class="form-control" name="mobile" value="{{ old('mobile') }}">
-							</div>
-						</div>
+                                @error('kin_address')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label">{{ _lang('Gender') }}</label>
-								<select class="form-control auto-select" data-selected="{{ old('gender') }}" name="gender">
-									<option value="">{{ _lang('Select One') }}</option>
-									<option value="male">{{ _lang('Male') }}</option>
-									<option value="female">{{ _lang('Female') }}</option>
-								</select>
-							</div>
-						</div>
+                        <div class="form-group row">
+                            <label for="kin_id_number" class="col-md-4 col-form-label text-md-right">{{ __('ID Number') }}</label>
 
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label">{{ _lang('City') }}</label>
-								<input type="text" class="form-control" name="city" value="{{ old('city') }}">
-							</div>
-						</div>
+                            <div class="col-md-6">
+                                <input id="kin_id_number" type="text" class="form-control @error('kin_id_number') is-invalid @enderror" name="kin_id_number" value="{{ old('kin_id_number') }}" required>
 
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label">{{ _lang('State') }}</label>
-								<input type="text" class="form-control" name="state" value="{{ old('state') }}">
-							</div>
-						</div>
+                                @error('kin_id_number')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
-						<div class="col-md-6">
-							<div class="form-group">
-								<label class="control-label">{{ _lang('Zip') }}</label>
-								<input type="text" class="form-control" name="zip" value="{{ old('zip') }}">
-							</div>
-						</div>
+                        <div class="form-group row">
+                            <label for="kin_phone" class="col-md-4 col-form-label text-md-right">{{ __('Phone Number') }}</label>
 
-						<!--Custom Fields-->
-						@if(! $customFields->isEmpty())
-							@foreach($customFields as $customField)
-							<div class="{{ $customField->field_width }}">
-								<div class="form-group">
-									<label class="control-label">{{ $customField->field_name }}</label>
-									{!! xss_clean(generate_input_field($customField)) !!}
-								</div>
-							</div>
-							@endforeach
-                        @endif
+                            <div class="col-md-6">
+                                <input id="kin_phone" type="text" class="form-control @error('kin_phone') is-invalid @enderror" name="kin_phone" value="{{ old('kin_phone') }}" required>
 
-						<div class="col-md-12">
-							<div class="form-group">
-								<label class="control-label">{{ _lang('Credit Source') }}</label>
-								<input type="text" class="form-control" name="credit_source" value="{{ old('credit_source') }}">
-							</div>
-						</div>
+                                @error('kin_phone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
-						<div class="col-md-12">
-							<div class="form-group">
-								<label class="control-label">{{ _lang('Address') }}</label>
-								<textarea class="form-control" name="address">{{ old('address') }}</textarea>
-							</div>
-						</div>
+                        <div class="form-group row">
+                            <label for="kin_email" class="col-md-4 col-form-label text-md-right">{{ __('Email Address') }}</label>
 
-						<div class="col-md-12">
-							<div class="form-group">
-								<label class="control-label">{{ _lang('Photo') }}</label>
-								<input type="file" class="form-control dropify" name="photo" >
-							</div>
-						</div>
+                            <div class="col-md-6">
+                                <input id="kin_email" type="email" class="form-control @error('kin_email') is-invalid @enderror" name="kin_email" value="{{ old('kin_email') }}">
 
-						<div class="col-md-12">
-							<div class="form-group">
-								<button type="submit" class="btn btn-primary"><i class="ti-check-box"></i>&nbsp;{{ _lang('Submit') }}</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-lg-4">
-			<div class="card">
-				<div class="card-header">
-					<div class="togglebutton">
-                        <h4 class="header-title d-flex align-items-center">{{ _lang('Login Details') }}&nbsp;&nbsp;
-                            <input type="checkbox" id="client_login" value="1" name="client_login">
-                        </h4>
-                    </div>
-				</div>
-				<div class="card-body" id="client_login_card">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="form-group">
-								<label class="control-label">{{ _lang('Name') }}</label>
-								<input type="text" class="form-control" name="name" value="{{ old('name') }}">
-							</div>
-						</div>
+                                @error('kin_email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
-						<div class="col-md-12">
-							<div class="form-group">
-								<label class="control-label">{{ _lang('Email') }}</label>
-								<input type="text" class="form-control" name="login_email" value="{{ old('login_email') }}">
-							</div>
-						</div>
+                        <div class="form-group row">
+                            <label for="kin_relationship" class="col-md-4 col-form-label text-md-right">{{ __('Relationship') }}</label>
 
+                            <div class="col-md-6">
+                                <input id="kin_relationship" type="text" class="form-control @error('kin_relationship') is-invalid @enderror" name="kin_relationship" value="{{ old('kin_relationship') }}" required>
 
-						<div class="col-md-12">
-							<div class="form-group">
-								<label class="control-label">{{ _lang('Password') }}</label>
-								<input type="password" class="form-control" name="password">
-							</div>
-						</div>
+                                @error('kin_relationship')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
-						<div class="col-md-12">
-							<div class="form-group">
-								<label class="control-label">{{ _lang('Status') }}</label>
-								<select class="form-control select2 auto-select" data-selected="{{ old('status') }}" name="status">
-									<option value="">{{ _lang('Select One') }}</option>
-									<option value="1">{{ _lang('Active') }}</option>
-									<option value="0">{{ _lang('In Active') }}</option>
-								</select>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</form>
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Continue') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
-
-

@@ -26,10 +26,11 @@
             @yield('content')
         </main>
     </div>
-	
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ public_asset('backend/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ public_asset('auth/js/script.js') }}"></script>
-	@stack('scripts')
+    @yield('js-script')
+    @stack('scripts')
 </body>
 </html>
