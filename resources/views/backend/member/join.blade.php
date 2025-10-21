@@ -64,7 +64,7 @@
 
                         <div class="form-group">
                             <label for="state_department">{{ __('State Department') }}</label>
-                            <select id="state_department" class="form-control @error('state_department') is-invalid @enderror" name="state_department" required>
+                            <select id="state_department" class="form-control select2 @error('state_department') is-invalid @enderror" name="state_department" required>
                                 <option value="">{{ __('-- Select State Department --') }}</option>
                                 @foreach(config('states.state_corporations') as $department)
                                     <option value="{{ $department }}" {{ old('state_department') == $department ? 'selected' : '' }}>{{ $department }}</option>

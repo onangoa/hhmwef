@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{{ public_asset('backend/plugins/bootstrap/css/bootstrap.min.css') }}">
     <link href="{{ public_asset('auth/css/app.css?v=1.2') }}" rel="stylesheet">
     <link href="{{ public_asset('auth/css/style.css?v=1.2') }}" rel="stylesheet">
+    <link href="{{ public_asset('backend/plugins/select2/css/select2.min.css') }}" rel="stylesheet">
     <style>
         .logo{
             width: 70px;
@@ -40,7 +41,14 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ public_asset('backend/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ public_asset('auth/js/script.js') }}"></script>
+    <script src="{{ public_asset('backend/plugins/select2/js/select2.min.js') }}"></script>
     @yield('js-script')
     @stack('scripts')
+
+    <script>
+        $(document).ready(function() {
+            $('.select2').select2();
+        });
+    </script>
 </body>
 </html>
