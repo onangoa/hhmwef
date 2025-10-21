@@ -19,10 +19,20 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ public_asset('backend/plugins/bootstrap/css/bootstrap.min.css') }}">
     <link href="{{ public_asset('auth/css/app.css?v=1.2') }}" rel="stylesheet">
+    <link href="{{ public_asset('auth/css/style.css?v=1.2') }}" rel="stylesheet">
+    <style>
+        .logo{
+            width: 70px;
+            
+        }
+    </style>
 </head>
 <body>
     <div id="app">
         <main class="py-4">
+            <div class="text-center mb-2">
+                <img src="{{ get_logo() }}" class="logo">
+            </div>
             @yield('content')
         </main>
     </div>

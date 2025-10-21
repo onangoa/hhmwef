@@ -5,32 +5,33 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Parent/Guardian Details') }}</div>
+                <div class="card-header">
+                    <h5 class="card-title">{{ __('Parent/Guardian Details') }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ __('Step 5 of 6: Parent/Guardian Details') }}</h6>
+                </div>
 
                 <div class="card-body">
+                    <div class="progress mb-4">
+                        <div class="progress-bar" role="progressbar" style="width: 83.33%;" aria-valuenow="83.33" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+
                     <form method="POST" action="{{ route('join.parents.store') }}">
                         @csrf
-
-                        <div class="form-group row">
-                            <div class="col-md-12">
-                                <h5 class="text-center mb-4">{{ __('Parent/Guardian Details') }}</h5>
-                            </div>
-                        </div>
 
                         <div id="parents-container">
                             @if(old('parent_name'))
                                 @foreach(old('parent_name') as $key => $value)
-                                    <div class="form-group row parent-entry">
+                                    <div class="form-row parent-entry mb-3">
                                         <div class="col-md-6">
-                                            <label for="parent_name_{{ $key }}" class="col-form-label">{{ __('Full Name') }}</label>
+                                            <label for="parent_name_{{ $key }}">{{ __('Full Name') }}</label>
                                             <input id="parent_name_{{ $key }}" type="text" class="form-control" name="parent_name[]" value="{{ old('parent_name.'.$key) }}">
                                         </div>
                                         <div class="col-md-5">
-                                            <label for="parent_relationship_{{ $key }}" class="col-form-label">{{ __('Relationship') }}</label>
+                                            <label for="parent_relationship_{{ $key }}">{{ __('Relationship') }}</label>
                                             <input id="parent_relationship_{{ $key }}" type="text" class="form-control" name="parent_relationship[]" value="{{ old('parent_relationship.'.$key) }}">
                                         </div>
                                         <div class="col-md-1">
-                                            <label class="col-form-label">&nbsp;</label>
+                                            <label>&nbsp;</label>
                                             <div>
                                                 <button type="button" class="btn btn-danger btn-sm remove-parent">-</button>
                                             </div>
@@ -38,17 +39,17 @@
                                     </div>
                                 @endforeach
                             @else
-                                <div class="form-group row parent-entry">
+                                <div class="form-row parent-entry mb-3">
                                     <div class="col-md-6">
-                                        <label for="parent_name_0" class="col-form-label">{{ __('Full Name') }}</label>
+                                        <label for="parent_name_0">{{ __('Full Name') }}</label>
                                         <input id="parent_name_0" type="text" class="form-control" name="parent_name[]">
                                     </div>
                                     <div class="col-md-5">
-                                        <label for="parent_relationship_0" class="col-form-label">{{ __('Relationship') }}</label>
+                                        <label for="parent_relationship_0">{{ __('Relationship') }}</label>
                                         <input id="parent_relationship_0" type="text" class="form-control" name="parent_relationship[]">
                                     </div>
                                     <div class="col-md-1">
-                                        <label class="col-form-label">&nbsp;</label>
+                                        <label>&nbsp;</label>
                                         <div>
                                             <button type="button" class="btn btn-danger btn-sm remove-parent">-</button>
                                         </div>
@@ -57,18 +58,14 @@
                             @endif
                         </div>
 
-                        <div class="form-group row">
-                            <div class="col-md-12">
-                                <button type="button" id="add-parent" class="btn btn-success btn-sm">{{ __('Add Parent') }}</button>
-                            </div>
+                        <div class="form-group">
+                            <button type="button" id="add-parent" class="btn btn-success btn-sm">{{ __('Add Parent') }}</button>
                         </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Continue') }}
-                                </button>
-                            </div>
+                        <div class="form-group mb-0">
+                            <button type="submit" class="btn btn-primary">
+                                {{ __('Continue') }}
+                            </button>
                         </div>
                     </form>
                 </div>

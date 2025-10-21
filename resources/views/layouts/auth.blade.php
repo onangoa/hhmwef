@@ -19,6 +19,12 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ public_asset('backend/plugins/bootstrap/css/bootstrap.min.css') }}">
     <link href="{{ public_asset('auth/css/app.css?v=1.2') }}" rel="stylesheet">
+     <style>
+        .logo{
+            width: 70px;
+            
+        }
+    </style>
 </head>
 <body>
     <div id="app">
