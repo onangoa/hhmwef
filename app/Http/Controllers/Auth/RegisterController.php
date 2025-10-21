@@ -53,7 +53,8 @@ class RegisterController extends Controller {
         if(get_option('member_signup') != 1) {
             return back();
         }
-        return view('auth.register');
+        //return view('auth.register');
+        return redirect()->route('join.join');
     }
 
     /**

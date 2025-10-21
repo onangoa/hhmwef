@@ -11,7 +11,9 @@
 
                             <div class="card-body">
                                 
-                                <img class="logo" src="{{ get_logo() }}">
+                                <div class="text-center mb-2">
+                                    <img src="{{ get_logo() }}" class="logo">
+                                </div>
                                 
                                 <h6 class="py-4 text-center">{{ _lang('Please confirm your password before continuing.') }}</h6> 
 

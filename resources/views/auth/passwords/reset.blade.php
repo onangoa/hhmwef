@@ -11,8 +11,10 @@
 
                             <div class="card-body">
                                 
-                                <img class="logo" src="{{ get_logo() }}">
-                                
+                                <div class="text-center mb-2">
+                                    <img src="{{ get_logo() }}" class="logo">
+                                </div>
+                                            
                                 <h5 class="py-4 text-center">{{ _lang('Update Your Password') }}</h5> 
 
                                 <form method="POST" action="{{ route('password.update') }}" class="form-signin">

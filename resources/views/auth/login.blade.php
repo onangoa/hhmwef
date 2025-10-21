@@ -63,7 +63,7 @@
                             </div>
                         </div>
 						
-						<div class="text-center">
+						<div>
 							<div class="custom-control custom-checkbox mb-3">
 								<input type="checkbox" name="remember" class="custom-control-input" id="remember" {{ old('remember') ? 'checked' : '' }}>
 								<label class="custom-control-label" for="remember">{{ _lang('Remember Me') }}</label>
@@ -74,17 +74,20 @@
                             <div class="col-md-12">
                                 <button type="submit" class="btn btn-primary btn-block">
                                     {{ _lang('Login') }}
-                                </button>
-
-                                @if(get_option('member_signup') == 1)
-                                    <a href="{{ route('register') }}" class="btn btn-link btn-register">{{ _lang('Create Account') }}</a>
-								@endif							
+                                </button>						
                             </div>
                         </div>
 						
 						
 						<div class="form-group row mt-3">
-                            <div class="col-md-12">
+                             @if(get_option('member_signup') == 1)
+                            <div class="col-md-6">
+								<a class="btn-link" href="{{ route('join.join') }}">
+									{{ _lang('Create Account') }}
+								</a>
+							</div>
+                            @endif	
+                            <div class="col-md-6">
 								<a class="btn-link" href="{{ route('password.request') }}">
 									{{ _lang('Forgot Password?') }}
 								</a>

@@ -9,7 +9,9 @@
                     <div class="col-md-12">
                         <div class="card card-signin my-5 p-3">
                             <div class="card-body">                      
-                                <img class="logo" src="{{ get_logo() }}">
+                                <div class="text-center mb-2">
+                                    <img src="{{ get_logo() }}" class="logo">
+                                </div>
                                 
                                 <h6 class="text-center py-4">{{ _lang('One time password has been sent to your email address.') }}</h6> 
 

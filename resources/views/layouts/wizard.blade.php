@@ -23,7 +23,7 @@
     <link href="{{ public_asset('backend/plugins/select2/css/select2.min.css') }}" rel="stylesheet">
     <style>
         .logo{
-            width: 70px;
+            width: 120px;
             
         }
     </style>

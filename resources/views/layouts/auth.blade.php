@@ -21,7 +21,7 @@
     <link href="{{ public_asset('auth/css/app.css?v=1.2') }}" rel="stylesheet">
      <style>
         .logo{
-            width: 70px;
+            width: 120px;
             
         }
     </style>
