@@ -64,6 +64,8 @@ Route::get('register/parents', [RegistrationController::class, 'createParents'])
 Route::post('register/parents', [RegistrationController::class, 'storeParents'])->name('join.parents.store');
 Route::get('register/parentsinlaw', [RegistrationController::class, 'createParentsInLaw'])->name('join.parentsinlaw');
 Route::post('register/parentsinlaw', [RegistrationController::class, 'storeParentsInLaw'])->name('join.parentsinlaw.store');
+Route::get('register/mpesa', [RegistrationController::class, 'createMpesaConfirmation'])->name('join.mpesa');
+Route::post('register/mpesa', [RegistrationController::class, 'storeMpesaConfirmation'])->name('join.mpesa.store');
 
 Route::group(['middleware' => ['install']], function () {
 

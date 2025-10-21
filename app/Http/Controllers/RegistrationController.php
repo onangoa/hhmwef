@@ -127,13 +127,33 @@ class RegistrationController extends Controller
     public function storeParentsInLaw(Request $request)
     {
         $request->session()->put('parentsinlaw_data', $request->all());
+        return redirect()->route('join.mpesa');
+    }
 
+    public function createMpesaConfirmation(Request $request)
+    {
+        $registration_data = $request->session()->get('registration_data');
+        if (!$registration_data) {
+            return redirect()->route('join.join');
+        }
+        return view('backend.member.mpesa_confirmation');
+    }
+
+    public function storeMpesaConfirmation(Request $request)
+    {
+        $request->validate([
+            'confirmation_message' => 'required|string|min:10',
+        ]);
+
+        $request->session()->put('mpesa_confirmation', $request->confirmation_message);
+        
         $registration_data = $request->session()->get('registration_data');
         $kin_data = $request->session()->get('kin_data');
         $spouse_data = $request->session()->get('spouse_data');
         $children_data = $request->session()->get('children_data');
         $parents_data = $request->session()->get('parents_data');
         $parentsinlaw_data = $request->session()->get('parentsinlaw_data');
+        $mpesa_confirmation = $request->session()->get('mpesa_confirmation');
 
         DB::beginTransaction();
 
@@ -191,6 +211,7 @@ class RegistrationController extends Controller
         $custom_fields = [];
         $custom_fields['parent_in_law_name'] = $parentsinlaw_data['parent_in_law_name'] ?? null;
         $custom_fields['parent_in_law_relationship'] = $parentsinlaw_data['parent_in_law_relationship'] ?? null;
+        $custom_fields['mpesa_confirmation'] = $mpesa_confirmation;
         $member->custom_fields = json_encode($custom_fields);
 
         $member->save();
@@ -198,7 +219,7 @@ class RegistrationController extends Controller
         DB::commit();
 
         // Clear session data
-        $request->session()->forget(['registration_data', 'kin_data', 'spouse_data', 'children_data', 'parents_data', 'parentsinlaw_data']);
+        $request->session()->forget(['registration_data', 'kin_data', 'spouse_data', 'children_data', 'parents_data', 'parentsinlaw_data', 'mpesa_confirmation']);
 
         return redirect()->route('login')->with('success', 'Registration complete. Your application is pending approval.');
     }
