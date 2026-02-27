@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">
                     <h5 class="card-title">{{ __('M-Pesa Payment Confirmation') }}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{ __('Final Step: M-Pesa Payment Confirmation') }}</h6>
+                    <h6 class="card-subtitle mb-2">{{ __('Final Step: M-Pesa Payment Confirmation') }}</h6>
                 </div>
 
                 <div class="card-body">

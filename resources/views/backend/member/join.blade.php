@@ -3,63 +3,75 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-lg-7 col-md-9 col-sm-11">
             <div class="card">
                 <div class="card-header">
                     <h5 class="card-title">{{ __('Member Registration') }}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{ __('Step 1 of 6: Personal Information') }}</h6>
+                    <h6 class="card-subtitle">{{ __('Step 1 of 6: Personal Information') }}</h6>
                 </div>
 
                 <div class="card-body">
-                    <div class="progress mb-4">
+                    <div class="progress">
                         <div class="progress-bar" role="progressbar" style="width: 16.67%;" aria-valuenow="16.67" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
 
                     <form method="POST" action="{{ route('join.join.store') }}">
                         @csrf
 
-                        <div class="form-group">
-                            <label for="full_name">{{ __('Full Name') }}</label>
-                            <input id="full_name" type="text" class="form-control @error('full_name') is-invalid @enderror" name="full_name" value="{{ old('full_name') }}" required autocomplete="name" autofocus>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="full_name">{{ __('Full Name') }}</label>
+                                    <input id="full_name" type="text" class="form-control @error('full_name') is-invalid @enderror" name="full_name" value="{{ old('full_name') }}" required autocomplete="name" autofocus placeholder="{{ __('Enter your full name') }}">
 
-                            @error('full_name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                                    @error('full_name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="id_number">{{ __('ID Number') }}</label>
+                                    <input id="id_number" type="text" class="form-control @error('id_number') is-invalid @enderror" name="id_number" value="{{ old('id_number') }}" required placeholder="{{ __('Enter ID number') }}">
+
+                                    @error('id_number')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="id_number">{{ __('ID Number') }}</label>
-                            <input id="id_number" type="text" class="form-control @error('id_number') is-invalid @enderror" name="id_number" value="{{ old('id_number') }}" required>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="institution">{{ __('Institution') }}</label>
+                                    <input id="institution" type="text" class="form-control @error('institution') is-invalid @enderror" name="institution" value="{{ old('institution') }}" required placeholder="{{ __('Enter institution name') }}">
 
-                            @error('id_number')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
+                                    @error('institution')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="institution">{{ __('Institution') }}</label>
-                            <input id="institution" type="text" class="form-control @error('institution') is-invalid @enderror" name="institution" value="{{ old('institution') }}" required>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="work_station">{{ __('Work Station') }}</label>
+                                    <input id="work_station" type="text" class="form-control @error('work_station') is-invalid @enderror" name="work_station" value="{{ old('work_station') }}" required placeholder="{{ __('Enter work station') }}">
 
-                            @error('institution')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
-                        <div class="form-group">
-                            <label for="work_station">{{ __('Work Station') }}</label>
-                            <input id="work_station" type="text" class="form-control @error('work_station') is-invalid @enderror" name="work_station" value="{{ old('work_station') }}" required>
-
-                            @error('work_station')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                                    @error('work_station')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-group">
@@ -77,20 +89,37 @@
                             @enderror
                         </div>
 
-                        <div class="form-group">
-                            <label for="payroll_number">{{ __('Payroll Number') }}</label>
-                            <input id="payroll_number" type="text" class="form-control @error('payroll_number') is-invalid @enderror" name="payroll_number" value="{{ old('payroll_number') }}" required>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="payroll_number">{{ __('Payroll Number') }}</label>
+                                    <input id="payroll_number" type="text" class="form-control @error('payroll_number') is-invalid @enderror" name="payroll_number" value="{{ old('payroll_number') }}" required placeholder="{{ __('Enter payroll number') }}">
 
-                            @error('payroll_number')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                                    @error('payroll_number')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="phone_numbers">{{ __('Phone Numbers') }}</label>
+                                    <input id="phone_numbers" type="text" class="form-control @error('phone_numbers') is-invalid @enderror" name="phone_numbers" value="{{ old('phone_numbers') }}" required placeholder="{{ __('Enter phone number(s)') }}">
+
+                                    @error('phone_numbers')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-group">
                             <label for="email_address">{{ __('E-Mail Address') }}</label>
-                            <input id="email_address" type="email" class="form-control @error('email_address') is-invalid @enderror" name="email_address" value="{{ old('email_address') }}" required autocomplete="email">
+                            <input id="email_address" type="email" class="form-control @error('email_address') is-invalid @enderror" name="email_address" value="{{ old('email_address') }}" required autocomplete="email" placeholder="{{ __('Enter your email address') }}">
 
                             @error('email_address')
                                 <span class="invalid-feedback" role="alert">
@@ -100,19 +129,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="phone_numbers">{{ __('Phone Numbers') }}</label>
-                            <input id="phone_numbers" type="text" class="form-control @error('phone_numbers') is-invalid @enderror" name="phone_numbers" value="{{ old('phone_numbers') }}" required>
-
-                            @error('phone_numbers')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
-                        <div class="form-group">
                             <label for="postal_address">{{ __('Postal Address') }}</label>
-                            <input id="postal_address" type="text" class="form-control @error('postal_address') is-invalid @enderror" name="postal_address" value="{{ old('postal_address') }}" required>
+                            <input id="postal_address" type="text" class="form-control @error('postal_address') is-invalid @enderror" name="postal_address" value="{{ old('postal_address') }}" required placeholder="{{ __('Enter postal address') }}">
 
                             @error('postal_address')
                                 <span class="invalid-feedback" role="alert">
@@ -136,9 +154,9 @@
                             @enderror
                         </div>
 
-                        <div class="form-group mb-0">
-                            <button type="submit" class="btn btn-primary">
-                                {{ __('Continue') }}
+                        <div class="form-group mb-0 mt-4">
+                            <button type="submit" class="btn btn-primary btn-block">
+                                {{ __('Continue') }} <i class="fas fa-arrow-right ml-2"></i>
                             </button>
                         </div>
                     </form>

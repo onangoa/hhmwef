@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">
                     <h5 class="card-title">{{ __('Next of Kin Details') }}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{ __('Step 2 of 6: Next of Kin') }}</h6>
+                    <h6 class="card-subtitle mb-2">{{ __('Step 2 of 6: Next of Kin') }}</h6>
                 </div>
 
                 <div class="card-body">
