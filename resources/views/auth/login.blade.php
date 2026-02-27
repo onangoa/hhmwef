@@ -18,11 +18,11 @@
                         </div>
                     @endif
 					
-					@if(Session::has('registration_success'))
-                        <div class="alert alert-success text-center" role="alert">
-                            <strong>{{ session('registration_success') }}</strong>
-                        </div>
-                    @endif
+					@if(Session::has('success'))
+					                   <div class="alert alert-success text-center" role="alert">
+					                       <strong>{{ session('success') }}</strong>
+					                   </div>
+					               @endif
 
 					<form method="POST" class="form-signin" action="{{ route('login') }}">
                         @csrf
