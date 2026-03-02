@@ -11,7 +11,7 @@ function public_asset($path) {
     if ($platform === 'cpanel') {
         return asset("public/$path");
     } else {
-        return asset("$path");
+        return asset("public/$path");
     }
 }
 
