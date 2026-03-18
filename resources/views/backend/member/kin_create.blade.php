@@ -18,15 +18,45 @@
                     <form method="POST" action="{{ route('join.kin.store') }}">
                         @csrf
 
-                        <div class="form-group">
-                            <label for="kin_full_name">{{ __('Full Name') }}</label>
-                            <input id="kin_full_name" type="text" class="form-control @error('kin_full_name') is-invalid @enderror" name="kin_full_name" value="{{ old('kin_full_name') }}" required autocomplete="name" autofocus>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="kin_first_name">{{ __('First Name') }}</label>
+                                    <input id="kin_first_name" type="text" class="form-control @error('kin_first_name') is-invalid @enderror" name="kin_first_name" value="{{ old('kin_first_name') }}" required autocomplete="given-name" autofocus>
 
-                            @error('kin_full_name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                                    @error('kin_first_name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="kin_last_name">{{ __('Last Name') }}</label>
+                                    <input id="kin_last_name" type="text" class="form-control @error('kin_last_name') is-invalid @enderror" name="kin_last_name" value="{{ old('kin_last_name') }}" required autocomplete="family-name">
+
+                                    @error('kin_last_name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="kin_surname">{{ __('Surname') }}</label>
+                                    <input id="kin_surname" type="text" class="form-control @error('kin_surname') is-invalid @enderror" name="kin_surname" value="{{ old('kin_surname') }}" autocomplete="additional-name" placeholder="{{ __('Enter surname (optional)') }}">
+
+                                    @error('kin_surname')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-group">

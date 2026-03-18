@@ -19,10 +19,12 @@ class RegistrationController extends Controller
     public function storeJoin(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'full_name' => 'required|string|max:255',
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'surname' => 'nullable|string|max:255',
             'id_number' => 'required|string|max:255|unique:members,id_number',
+            'date_of_birth' => 'required|date',
             'institution' => 'required|string|max:255',
-            'work_station' => 'required|string|max:255',
             'state_department' => 'required|string|max:255',
             'payroll_number' => 'required|string|max:255|unique:members,payroll_number',
             'email_address' => 'required|email|max:255|unique:users,email',
@@ -54,7 +56,9 @@ class RegistrationController extends Controller
     public function storeKin(Request $request)
     {
         $request->validate([
-            'kin_full_name' => 'required|string|max:255',
+            'kin_first_name' => 'required|string|max:255',
+            'kin_last_name' => 'required|string|max:255',
+            'kin_surname' => 'nullable|string|max:255',
             'kin_address' => 'required|string|max:255',
             'kin_id_number' => 'required|string|max:255',
             'kin_phone' => 'required|string|max:255',
@@ -94,6 +98,14 @@ class RegistrationController extends Controller
 
     public function storeChildren(Request $request)
     {
+        $request->validate([
+            'child_first_name.*' => 'nullable|string|max:255',
+            'child_last_name.*' => 'nullable|string|max:255',
+            'child_surname.*' => 'nullable|string|max:255',
+            'child_age.*' => 'nullable|integer',
+            'child_birth_certificate.*' => 'nullable|string|max:255',
+        ]);
+
         $request->session()->put('children_data', $request->all());
         return redirect()->route('join.parents');
     }
@@ -110,6 +122,13 @@ class RegistrationController extends Controller
 
     public function storeParents(Request $request)
     {
+        $request->validate([
+            'parent_first_name.*' => 'nullable|string|max:255',
+            'parent_last_name.*' => 'nullable|string|max:255',
+            'parent_surname.*' => 'nullable|string|max:255',
+            'parent_relationship.*' => 'nullable|string|max:255',
+        ]);
+
         $request->session()->put('parents_data', $request->all());
         return redirect()->route('join.parentsinlaw');
     }
@@ -126,6 +145,13 @@ class RegistrationController extends Controller
 
     public function storeParentsInLaw(Request $request)
     {
+        $request->validate([
+            'parent_in_law_first_name.*' => 'nullable|string|max:255',
+            'parent_in_law_last_name.*' => 'nullable|string|max:255',
+            'parent_in_law_surname.*' => 'nullable|string|max:255',
+            'parent_in_law_relationship.*' => 'nullable|string|max:255',
+        ]);
+
         $request->session()->put('parentsinlaw_data', $request->all());
         return redirect()->route('join.mpesa');
     }
@@ -159,7 +185,7 @@ class RegistrationController extends Controller
 
         // Create User
         $user = new User();
-        $user->name = $registration_data['full_name'];
+        $user->name = $registration_data['first_name'] . ' ' . $registration_data['last_name'] . ' ' . $registration_data['surname'];
         $user->email = $registration_data['email_address'];
         $user->password = Hash::make('123456');
         $user->user_type = 'customer';
@@ -168,12 +194,13 @@ class RegistrationController extends Controller
 
         // Create Member
         $member = new Member();
-        $name_parts = explode(' ', $registration_data['full_name'], 2);
-        $member->first_name = $name_parts[0];
-        $member->last_name = $name_parts[1] ?? '';
+        $member->first_name = $registration_data['first_name'];
+        $member->last_name = $registration_data['last_name'];
+        $member->surname = $registration_data['surname'] ?? null;
         $member->id_number = $registration_data['id_number'];
+        $member->birth_certificate_entry_no = $children_data['birth_certificate_entry_no'] ?? null;
+        $member->date_of_birth = $registration_data['date_of_birth'];
         $member->institution = $registration_data['institution'];
-        $member->work_station = $registration_data['work_station'];
         $member->state_department = $registration_data['state_department'];
         $member->payroll_number = $registration_data['payroll_number'];
         $member->email = $registration_data['email_address'];
@@ -184,7 +211,10 @@ class RegistrationController extends Controller
         $member->status = 0; // Pending approval
 
         // Kin
-        $member->nextofkin_name = $kin_data['kin_full_name'] ?? null;
+        $kin_first_name = $kin_data['kin_first_name'] ?? '';
+        $kin_last_name = $kin_data['kin_last_name'] ?? '';
+        $kin_surname = $kin_data['kin_surname'] ?? '';
+        $member->nextofkin_name = trim($kin_first_name . ' ' . $kin_last_name . ' ' . $kin_surname);
         $member->nextofkin_address = $kin_data['kin_address'] ?? null;
         $member->nextofkin_id_number = $kin_data['kin_id_number'] ?? null;
         $member->nextofkin_phone_number = $kin_data['kin_phone'] ?? null;
@@ -192,25 +222,58 @@ class RegistrationController extends Controller
         $member->nextofkin_Relationship = $kin_data['kin_relationship'] ?? null;
 
         // Spouse
-        $member->spouse_name = $spouse_data['spouse_name'] ?? null;
+        $spouse_first_name = $spouse_data['spouse_first_name'] ?? '';
+        $spouse_last_name = $spouse_data['spouse_last_name'] ?? '';
+        $spouse_surname = $spouse_data['spouse_surname'] ?? '';
+        $member->spouse_name = trim($spouse_first_name . ' ' . $spouse_last_name . ' ' . $spouse_surname);
         $member->spouse_address = $spouse_data['spouse_address'] ?? null;
         $member->spouse_id_number = $spouse_data['spouse_id_number'] ?? null;
         $member->spouse_phone_number = $spouse_data['spouse_phone_number'] ?? null;
         $member->spouse_email = $spouse_data['spouse_email'] ?? null;
 
         // Children
-        $member->child_name = isset($children_data['child_name']) ? json_encode($children_data['child_name']) : null;
+        $child_names = [];
+        $child_birth_certificates = [];
+        if (isset($children_data['child_first_name'])) {
+            foreach ($children_data['child_first_name'] as $key => $first_name) {
+                $last_name = $children_data['child_last_name'][$key] ?? '';
+                $surname = $children_data['child_surname'][$key] ?? '';
+                $child_names[] = trim($first_name . ' ' . $last_name . ' ' . $surname);
+                $child_birth_certificates[] = $children_data['child_birth_certificate'][$key] ?? '';
+            }
+        }
+        $member->child_name = !empty($child_names) ? json_encode($child_names) : null;
         $member->child_age = isset($children_data['child_age']) ? json_encode($children_data['child_age']) : null;
-        $member->child_phone_number = isset($children_data['child_phone_number']) ? json_encode($children_data['child_phone_number']) : null;
+        $member->child_phone_number = null; // Removed as per requirements
+        // Store child birth certificates in custom fields
+        $custom_fields = [];
+        $custom_fields['child_birth_certificates'] = !empty($child_birth_certificates) ? json_encode($child_birth_certificates) : null;
 
         // Parents
-        $member->parent_name = isset($parents_data['parent_name']) ? json_encode($parents_data['parent_name']) : null;
+        $parent_names = [];
+        if (isset($parents_data['parent_first_name'])) {
+            foreach ($parents_data['parent_first_name'] as $key => $first_name) {
+                $last_name = $parents_data['parent_last_name'][$key] ?? '';
+                $surname = $parents_data['parent_surname'][$key] ?? '';
+                $parent_names[] = trim($first_name . ' ' . $last_name . ' ' . $surname);
+            }
+        }
+        $member->parent_name = !empty($parent_names) ? json_encode($parent_names) : null;
         $member->parent_relationship = isset($parents_data['parent_relationship']) ? json_encode($parents_data['parent_relationship']) : null;
         
         // Parents In Law
         $custom_fields = [];
-        $custom_fields['parent_in_law_name'] = $parentsinlaw_data['parent_in_law_name'] ?? null;
-        $custom_fields['parent_in_law_relationship'] = $parentsinlaw_data['parent_in_law_relationship'] ?? null;
+        $parent_in_law_names = [];
+        if (isset($parentsinlaw_data['parent_in_law_first_name'])) {
+            foreach ($parentsinlaw_data['parent_in_law_first_name'] as $key => $first_name) {
+                $last_name = $parentsinlaw_data['parent_in_law_last_name'][$key] ?? '';
+                $surname = $parentsinlaw_data['parent_in_law_surname'][$key] ?? '';
+                $parent_in_law_names[] = trim($first_name . ' ' . $last_name . ' ' . $surname);
+            }
+        }
+        $custom_fields['parent_in_law_name'] = !empty($parent_in_law_names) ? json_encode($parent_in_law_names) : null;
+        $custom_fields['parent_in_law_relationship'] = isset($parentsinlaw_data['parent_in_law_relationship']) ? json_encode($parentsinlaw_data['parent_in_law_relationship']) : null;
+        $custom_fields['child_birth_certificates'] = $child_birth_certificates ?? null;
         $custom_fields['mpesa_confirmation'] = $mpesa_confirmation;
         $member->custom_fields = json_encode($custom_fields);
 

@@ -18,21 +18,29 @@
                     <form method="POST" action="{{ route('join.children.store') }}">
                         @csrf
 
-                        <div id="children-container">
-                            @if(old('child_name'))
-                                @foreach(old('child_name') as $key => $value)
+                         <div id="children-container">
+                            @if(old('child_first_name'))
+                                @foreach(old('child_first_name') as $key => $value)
                                     <div class="form-row child-entry mb-3">
-                                        <div class="col-md-4">
-                                            <label for="child_name_{{ $key }}">{{ __('Full Name') }}</label>
-                                            <input id="child_name_{{ $key }}" type="text" class="form-control" name="child_name[]" value="{{ old('child_name.'.$key) }}">
+                                        <div class="col-md-2">
+                                            <label for="child_first_name_{{ $key }}">{{ __('First Name') }}</label>
+                                            <input id="child_first_name_{{ $key }}" type="text" class="form-control" name="child_first_name[]" value="{{ old('child_first_name.'.$key) }}">
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-2">
+                                            <label for="child_last_name_{{ $key }}">{{ __('Last Name') }}</label>
+                                            <input id="child_last_name_{{ $key }}" type="text" class="form-control" name="child_last_name[]" value="{{ old('child_last_name.'.$key) }}">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="child_surname_{{ $key }}">{{ __('Surname') }}</label>
+                                            <input id="child_surname_{{ $key }}" type="text" class="form-control" name="child_surname[]" value="{{ old('child_surname.'.$key) }}" placeholder="{{ __('Optional') }}">
+                                        </div>
+                                        <div class="col-md-2">
                                             <label for="child_age_{{ $key }}">{{ __('Age') }}</label>
                                             <input id="child_age_{{ $key }}" type="number" class="form-control" name="child_age[]" value="{{ old('child_age.'.$key) }}">
                                         </div>
-                                        <div class="col-md-4">
-                                            <label for="child_phone_{{ $key }}">{{ __('Contact') }}</label>
-                                            <input id="child_phone_{{ $key }}" type="text" class="form-control" name="child_phone_number[]" value="{{ old('child_phone_number.'.$key) }}">
+                                        <div class="col-md-3">
+                                            <label for="child_birth_certificate_{{ $key }}">{{ __('Birth Cert. No') }}</label>
+                                            <input id="child_birth_certificate_{{ $key }}" type="text" class="form-control" name="child_birth_certificate[]" value="{{ old('child_birth_certificate.'.$key) }}">
                                         </div>
                                         <div class="col-md-1">
                                             <label>&nbsp;</label>
@@ -44,17 +52,25 @@
                                 @endforeach
                             @else
                                 <div class="form-row child-entry mb-3">
-                                    <div class="col-md-4">
-                                        <label for="child_name_0">{{ __('Full Name') }}</label>
-                                        <input id="child_name_0" type="text" class="form-control" name="child_name[]">
+                                    <div class="col-md-2">
+                                        <label for="child_first_name_0">{{ __('First Name') }}</label>
+                                        <input id="child_first_name_0" type="text" class="form-control" name="child_first_name[]">
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
+                                        <label for="child_last_name_0">{{ __('Last Name') }}</label>
+                                        <input id="child_last_name_0" type="text" class="form-control" name="child_last_name[]">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label for="child_surname_0">{{ __('Surname') }}</label>
+                                        <input id="child_surname_0" type="text" class="form-control" name="child_surname[]" placeholder="{{ __('Optional') }}">
+                                    </div>
+                                    <div class="col-md-2">
                                         <label for="child_age_0">{{ __('Age') }}</label>
                                         <input id="child_age_0" type="number" class="form-control" name="child_age[]">
                                     </div>
-                                    <div class="col-md-4">
-                                        <label for="child_phone_0">{{ __('Contact') }}</label>
-                                        <input id="child_phone_0" type="text" class="form-control" name="child_phone_number[]">
+                                    <div class="col-md-3">
+                                        <label for="child_birth_certificate_0">{{ __('Birth Cert. No') }}</label>
+                                        <input id="child_birth_certificate_0" type="text" class="form-control" name="child_birth_certificate[]">
                                     </div>
                                     <div class="col-md-1">
                                         <label>&nbsp;</label>
@@ -91,17 +107,25 @@ $(document).ready(function() {
     $("#add-child").click(function() {
         let newChildEntry = `
             <div class="form-group row child-entry">
-                <div class="col-md-4">
-                    <label for="child_name_${childCount}" class="col-form-label">{{ __('Full Name') }}</label>
-                    <input id="child_name_${childCount}" type="text" class="form-control" name="child_name[]">
+                <div class="col-md-2">
+                    <label for="child_first_name_${childCount}" class="col-form-label">{{ __('First Name') }}</label>
+                    <input id="child_first_name_${childCount}" type="text" class="form-control" name="child_first_name[]">
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
+                    <label for="child_last_name_${childCount}" class="col-form-label">{{ __('Last Name') }}</label>
+                    <input id="child_last_name_${childCount}" type="text" class="form-control" name="child_last_name[]">
+                </div>
+                <div class="col-md-2">
+                    <label for="child_surname_${childCount}" class="col-form-label">{{ __('Surname') }}</label>
+                    <input id="child_surname_${childCount}" type="text" class="form-control" name="child_surname[]" placeholder="{{ __('Optional') }}">
+                </div>
+                <div class="col-md-2">
                     <label for="child_age_${childCount}" class="col-form-label">{{ __('Age') }}</label>
                     <input id="child_age_${childCount}" type="number" class="form-control" name="child_age[]">
                 </div>
-                <div class="col-md-4">
-                    <label for="child_phone_${childCount}" class="col-form-label">{{ __('Contact') }}</label>
-                    <input id="child_phone_${childCount}" type="text" class="form-control" name="child_phone_number[]">
+                <div class="col-md-3">
+                    <label for="child_birth_certificate_${childCount}" class="col-form-label">{{ __('Birth Cert. No') }}</label>
+                    <input id="child_birth_certificate_${childCount}" type="text" class="form-control" name="child_birth_certificate[]">
                 </div>
                 <div class="col-md-1">
                     <label class="col-form-label">&nbsp;</label>

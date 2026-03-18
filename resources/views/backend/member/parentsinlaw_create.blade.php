@@ -18,15 +18,23 @@
                     <form method="POST" action="{{ route('join.parentsinlaw.store') }}">
                         @csrf
 
-                        <div id="parentsinlaw-container">
-                            @if(old('parent_in_law_name'))
-                                @foreach(old('parent_in_law_name') as $key => $value)
+                         <div id="parentsinlaw-container">
+                            @if(old('parent_in_law_first_name'))
+                                @foreach(old('parent_in_law_first_name') as $key => $value)
                                     <div class="form-row parentinlaw-entry mb-3">
-                                        <div class="col-md-6">
-                                            <label for="parent_in_law_name_{{ $key }}">{{ __('Full Name') }}</label>
-                                            <input id="parent_in_law_name_{{ $key }}" type="text" class="form-control" name="parent_in_law_name[]" value="{{ old('parent_in_law_name.'.$key) }}">
+                                        <div class="col-md-3">
+                                            <label for="parent_in_law_first_name_{{ $key }}">{{ __('First Name') }}</label>
+                                            <input id="parent_in_law_first_name_{{ $key }}" type="text" class="form-control" name="parent_in_law_first_name[]" value="{{ old('parent_in_law_first_name.'.$key) }}">
                                         </div>
-                                        <div class="col-md-5">
+                                        <div class="col-md-3">
+                                            <label for="parent_in_law_last_name_{{ $key }}">{{ __('Last Name') }}</label>
+                                            <input id="parent_in_law_last_name_{{ $key }}" type="text" class="form-control" name="parent_in_law_last_name[]" value="{{ old('parent_in_law_last_name.'.$key) }}">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="parent_in_law_surname_{{ $key }}">{{ __('Surname') }}</label>
+                                            <input id="parent_in_law_surname_{{ $key }}" type="text" class="form-control" name="parent_in_law_surname[]" value="{{ old('parent_in_law_surname.'.$key) }}" placeholder="{{ __('Optional') }}">
+                                        </div>
+                                        <div class="col-md-2">
                                             <label for="parent_in_law_relationship_{{ $key }}">{{ __('Relationship') }}</label>
                                             <input id="parent_in_law_relationship_{{ $key }}" type="text" class="form-control" name="parent_in_law_relationship[]" value="{{ old('parent_in_law_relationship.'.$key) }}">
                                         </div>
@@ -40,11 +48,19 @@
                                 @endforeach
                             @else
                                 <div class="form-row parentinlaw-entry mb-3">
-                                    <div class="col-md-6">
-                                        <label for="parent_in_law_name_0">{{ __('Full Name') }}</label>
-                                        <input id="parent_in_law_name_0" type="text" class="form-control" name="parent_in_law_name[]">
+                                    <div class="col-md-3">
+                                        <label for="parent_in_law_first_name_0">{{ __('First Name') }}</label>
+                                        <input id="parent_in_law_first_name_0" type="text" class="form-control" name="parent_in_law_first_name[]">
                                     </div>
-                                    <div class="col-md-5">
+                                    <div class="col-md-3">
+                                        <label for="parent_in_law_last_name_0">{{ __('Last Name') }}</label>
+                                        <input id="parent_in_law_last_name_0" type="text" class="form-control" name="parent_in_law_last_name[]">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="parent_in_law_surname_0">{{ __('Surname') }}</label>
+                                        <input id="parent_in_law_surname_0" type="text" class="form-control" name="parent_in_law_surname[]" placeholder="{{ __('Optional') }}">
+                                    </div>
+                                    <div class="col-md-2">
                                         <label for="parent_in_law_relationship_0">{{ __('Relationship') }}</label>
                                         <input id="parent_in_law_relationship_0" type="text" class="form-control" name="parent_in_law_relationship[]">
                                     </div>
@@ -83,11 +99,19 @@ $(document).ready(function() {
     $("#add-parentinlaw").click(function() {
         let newParentInLawEntry = `
             <div class="form-group row parentinlaw-entry">
-                <div class="col-md-6">
-                    <label for="parent_in_law_name_${parentInLawCount}" class="col-form-label">{{ __('Full Name') }}</label>
-                    <input id="parent_in_law_name_${parentInLawCount}" type="text" class="form-control" name="parent_in_law_name[]">
+                <div class="col-md-3">
+                    <label for="parent_in_law_first_name_${parentInLawCount}" class="col-form-label">{{ __('First Name') }}</label>
+                    <input id="parent_in_law_first_name_${parentInLawCount}" type="text" class="form-control" name="parent_in_law_first_name[]">
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-3">
+                    <label for="parent_in_law_last_name_${parentInLawCount}" class="col-form-label">{{ __('Last Name') }}</label>
+                    <input id="parent_in_law_last_name_${parentInLawCount}" type="text" class="form-control" name="parent_in_law_last_name[]">
+                </div>
+                <div class="col-md-3">
+                    <label for="parent_in_law_surname_${parentInLawCount}" class="col-form-label">{{ __('Surname') }}</label>
+                    <input id="parent_in_law_surname_${parentInLawCount}" type="text" class="form-control" name="parent_in_law_surname[]" placeholder="{{ __('Optional') }}">
+                </div>
+                <div class="col-md-2">
                     <label for="parent_in_law_relationship_${parentInLawCount}" class="col-form-label">{{ __('Relationship') }}</label>
                     <input id="parent_in_law_relationship_${parentInLawCount}" type="text" class="form-control" name="parent_in_law_relationship[]">
                 </div>

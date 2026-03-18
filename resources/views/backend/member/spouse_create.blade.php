@@ -18,15 +18,45 @@
                     <form method="POST" action="{{ route('join.spouse.store') }}">
                         @csrf
 
-                        <div class="form-group">
-                            <label for="spouse_name">{{ __('Full Name') }}</label>
-                            <input id="spouse_name" type="text" class="form-control @error('spouse_name') is-invalid @enderror" name="spouse_name" value="{{ old('spouse_name') }}" autocomplete="name" autofocus>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="spouse_first_name">{{ __('First Name') }}</label>
+                                    <input id="spouse_first_name" type="text" class="form-control @error('spouse_first_name') is-invalid @enderror" name="spouse_first_name" value="{{ old('spouse_first_name') }}" autocomplete="given-name" autofocus>
 
-                            @error('spouse_name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                                    @error('spouse_first_name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="spouse_last_name">{{ __('Last Name') }}</label>
+                                    <input id="spouse_last_name" type="text" class="form-control @error('spouse_last_name') is-invalid @enderror" name="spouse_last_name" value="{{ old('spouse_last_name') }}" autocomplete="family-name">
+
+                                    @error('spouse_last_name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="spouse_surname">{{ __('Surname') }}</label>
+                                    <input id="spouse_surname" type="text" class="form-control @error('spouse_surname') is-invalid @enderror" name="spouse_surname" value="{{ old('spouse_surname') }}" autocomplete="additional-name" placeholder="{{ __('Enter surname (optional)') }}">
+
+                                    @error('spouse_surname')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-group">

@@ -18,15 +18,23 @@
                     <form method="POST" action="{{ route('join.parents.store') }}">
                         @csrf
 
-                        <div id="parents-container">
-                            @if(old('parent_name'))
-                                @foreach(old('parent_name') as $key => $value)
+                         <div id="parents-container">
+                            @if(old('parent_first_name'))
+                                @foreach(old('parent_first_name') as $key => $value)
                                     <div class="form-row parent-entry mb-3">
-                                        <div class="col-md-6">
-                                            <label for="parent_name_{{ $key }}">{{ __('Full Name') }}</label>
-                                            <input id="parent_name_{{ $key }}" type="text" class="form-control" name="parent_name[]" value="{{ old('parent_name.'.$key) }}">
+                                        <div class="col-md-3">
+                                            <label for="parent_first_name_{{ $key }}">{{ __('First Name') }}</label>
+                                            <input id="parent_first_name_{{ $key }}" type="text" class="form-control" name="parent_first_name[]" value="{{ old('parent_first_name.'.$key) }}">
                                         </div>
-                                        <div class="col-md-5">
+                                        <div class="col-md-3">
+                                            <label for="parent_last_name_{{ $key }}">{{ __('Last Name') }}</label>
+                                            <input id="parent_last_name_{{ $key }}" type="text" class="form-control" name="parent_last_name[]" value="{{ old('parent_last_name.'.$key) }}">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="parent_surname_{{ $key }}">{{ __('Surname') }}</label>
+                                            <input id="parent_surname_{{ $key }}" type="text" class="form-control" name="parent_surname[]" value="{{ old('parent_surname.'.$key) }}" placeholder="{{ __('Optional') }}">
+                                        </div>
+                                        <div class="col-md-2">
                                             <label for="parent_relationship_{{ $key }}">{{ __('Relationship') }}</label>
                                             <input id="parent_relationship_{{ $key }}" type="text" class="form-control" name="parent_relationship[]" value="{{ old('parent_relationship.'.$key) }}">
                                         </div>
@@ -40,11 +48,19 @@
                                 @endforeach
                             @else
                                 <div class="form-row parent-entry mb-3">
-                                    <div class="col-md-6">
-                                        <label for="parent_name_0">{{ __('Full Name') }}</label>
-                                        <input id="parent_name_0" type="text" class="form-control" name="parent_name[]">
+                                    <div class="col-md-3">
+                                        <label for="parent_first_name_0">{{ __('First Name') }}</label>
+                                        <input id="parent_first_name_0" type="text" class="form-control" name="parent_first_name[]">
                                     </div>
-                                    <div class="col-md-5">
+                                    <div class="col-md-3">
+                                        <label for="parent_last_name_0">{{ __('Last Name') }}</label>
+                                        <input id="parent_last_name_0" type="text" class="form-control" name="parent_last_name[]">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="parent_surname_0">{{ __('Surname') }}</label>
+                                        <input id="parent_surname_0" type="text" class="form-control" name="parent_surname[]" placeholder="{{ __('Optional') }}">
+                                    </div>
+                                    <div class="col-md-2">
                                         <label for="parent_relationship_0">{{ __('Relationship') }}</label>
                                         <input id="parent_relationship_0" type="text" class="form-control" name="parent_relationship[]">
                                     </div>
@@ -83,11 +99,19 @@ $(document).ready(function() {
     $("#add-parent").click(function() {
         let newParentEntry = `
             <div class="form-group row parent-entry">
-                <div class="col-md-6">
-                    <label for="parent_name_${parentCount}" class="col-form-label">{{ __('Full Name') }}</label>
-                    <input id="parent_name_${parentCount}" type="text" class="form-control" name="parent_name[]">
+                <div class="col-md-3">
+                    <label for="parent_first_name_${parentCount}" class="col-form-label">{{ __('First Name') }}</label>
+                    <input id="parent_first_name_${parentCount}" type="text" class="form-control" name="parent_first_name[]">
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-3">
+                    <label for="parent_last_name_${parentCount}" class="col-form-label">{{ __('Last Name') }}</label>
+                    <input id="parent_last_name_${parentCount}" type="text" class="form-control" name="parent_last_name[]">
+                </div>
+                <div class="col-md-3">
+                    <label for="parent_surname_${parentCount}" class="col-form-label">{{ __('Surname') }}</label>
+                    <input id="parent_surname_${parentCount}" type="text" class="form-control" name="parent_surname[]" placeholder="{{ __('Optional') }}">
+                </div>
+                <div class="col-md-2">
                     <label for="parent_relationship_${parentCount}" class="col-form-label">{{ __('Relationship') }}</label>
                     <input id="parent_relationship_${parentCount}" type="text" class="form-control" name="parent_relationship[]">
                 </div>

@@ -19,12 +19,12 @@
                         @csrf
 
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="full_name">{{ __('Full Name') }}</label>
-                                    <input id="full_name" type="text" class="form-control @error('full_name') is-invalid @enderror" name="full_name" value="{{ old('full_name') }}" required autocomplete="name" autofocus placeholder="{{ __('Enter your full name') }}">
+                                    <label for="first_name">{{ __('First Name') }}</label>
+                                    <input id="first_name" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}" required autocomplete="given-name" autofocus placeholder="{{ __('Enter your first name') }}">
 
-                                    @error('full_name')
+                                    @error('first_name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -32,6 +32,34 @@
                                 </div>
                             </div>
 
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="last_name">{{ __('Last Name') }}</label>
+                                    <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" required autocomplete="family-name" placeholder="{{ __('Enter your last name') }}">
+
+                                    @error('last_name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="surname">{{ __('Surname') }}</label>
+                                    <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" autocomplete="additional-name" placeholder="{{ __('Enter your surname (optional)') }}">
+
+                                    @error('surname')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="id_number">{{ __('ID Number') }}</label>
@@ -49,10 +77,10 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="institution">{{ __('Institution') }}</label>
-                                    <input id="institution" type="text" class="form-control @error('institution') is-invalid @enderror" name="institution" value="{{ old('institution') }}" required placeholder="{{ __('Enter institution name') }}">
+                                    <label for="date_of_birth">{{ __('Date of Birth') }}</label>
+                                    <input id="date_of_birth" type="date" class="form-control @error('date_of_birth') is-invalid @enderror" name="date_of_birth" value="{{ old('date_of_birth') }}" required placeholder="{{ __('Enter your date of birth') }}">
 
-                                    @error('institution')
+                                    @error('date_of_birth')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -62,10 +90,10 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="work_station">{{ __('Work Station') }}</label>
-                                    <input id="work_station" type="text" class="form-control @error('work_station') is-invalid @enderror" name="work_station" value="{{ old('work_station') }}" required placeholder="{{ __('Enter work station') }}">
+                                    <label for="institution">{{ __('Ministry') }}</label>
+                                    <input id="institution" type="text" class="form-control @error('institution') is-invalid @enderror" name="institution" value="{{ old('institution') }}" required placeholder="{{ __('Enter ministry name') }}">
 
-                                    @error('work_station')
+                                    @error('institution')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
